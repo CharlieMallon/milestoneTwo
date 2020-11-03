@@ -1,45 +1,94 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+<h1 align="center">Maze Game</h1>
 
-Welcome USER_NAME,
+## User Experience (UX)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+-   ### User stories
 
-## Gitpod Reminders
+    -   #### First Time Visitor Goals
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+        1. As a First Time Visitor, I want to play a game.
+        1. As a First Time Visitor, I need to know the keys.
+       
+    -   #### Returning Visitor Goals
 
-`python3 -m http.server`
+        1. As a Returning Visitor, I want to beat my score.
+        1. As a Returning Visitor, I want to customise the game board.
 
-A blue button should appear to click: *Make Public*,
+    -   #### Site Owner Goals
+        1. As a Site Owner, I want to play a game I made.
 
-Another blue button should appear to click: *Open Browser*.
+-   ### Design
+    -   #### Colour Scheme
+        -   a few colour schemes for people to chose from.  remember that it should work on dark and light!
+    -   #### Typography
+        -   cartoony - comic sans?
+    -   #### Imagery
+        -   simple and clean
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+*   ### Wireframes
 
-A blue button should appear to click: *Make Public*,
+    -    General Game Wireframes - [View](assets/wireframes/genral-game-ideas.png)
 
-Another blue button should appear to click: *Open Browser*.
+    -   Mobile Wireframes - [Idea 1](assets/wireframes/phone1.png) [Idea 2](assets/wireframes/phone2.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    -   Tablet Wireframes - [Idea 1](assets/wireframes/tablet1.png) [Idea 2](assets/wireframes/tablet2.png)
 
-## Updates Since The Instructional Video
+    -   Window Wireframes - [View](assets/wireframes/small-window.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+I have split the features into Beta, Issue 1 & Issue 2.  The project is currently at the Beta stage
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Beta
+    -   Simple maze game in which you move using the arrow keys. 
+    -   2-3 sample game maps
+    -   Keep score
+    -   Tell you when you have died/completed
+    -   Tell you how to play
+    -   Make Responsive on all Devices
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Issue 1
+    -   Model for Game over
+    -   Model for How to play - with cool arrow graphics
+    -   Change Character
+    -   Change Colour
+    -   Dark/Light Toggle
+    -   Randomise Game Board (many levels)
+    -   Use gestures for mobile Screens
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Issue 2
+    -   Leader Board
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Technologies Used
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Languages Used
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JS](https://en.wikipedia.org/wiki/JavaScript)
 
---------
+### Frameworks, Libraries & Programs Used
 
-Happy coding!
+1. 
+
+## Testing
+
+## Deployment
+
+## Credits
+
+### Code
+
+-   
+
+### Content
+
+-   All content was written by the developer.
+
+### Media
+
+-   
+
+### Acknowledgements
+
+-   
