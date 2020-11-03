@@ -1,5 +1,7 @@
 <h1 align="center">Maze Game</h1>
 
+[Trello Board](https://trello.com/b/oC1N2gRU/milestone-2-project)
+
 ## User Experience (UX)
 
 -   ### User stories
