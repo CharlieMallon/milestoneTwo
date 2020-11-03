@@ -1,5 +1,7 @@
 <h1 align="center">Maze Game</h1>
 
+This is a simple maze game with some fun features and should hopefully show of my coding Knowledge so far.
+
 [Trello Board](https://trello.com/b/oC1N2gRU/milestone-2-project)
 
 ## User Experience (UX)
@@ -41,7 +43,7 @@
 
 I have split the features into Beta, Issue 1 & Issue 2.  The project is currently at the Beta stage
 
-Beta
+*   ### Beta
     -   Simple maze game in which you move using the arrow keys. 
     -   2-3 sample game maps
     -   Keep score
@@ -49,7 +51,7 @@ Beta
     -   Tell you how to play
     -   Make Responsive on all Devices
 
-Issue 1
+*   ### Issue 1
     -   Model for Game over
     -   Model for How to play - with cool arrow graphics
     -   Change Character
@@ -58,7 +60,7 @@ Issue 1
     -   Randomise Game Board (many levels)
     -   Use gestures for mobile Screens
 
-Issue 2
+*   ### Issue 2
     -   Leader Board
 
 ## Technologies Used
