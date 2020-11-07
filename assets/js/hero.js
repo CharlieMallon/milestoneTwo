@@ -21,7 +21,9 @@ export function update () {
             x: wall.x + i,
             y: wall.y
             }
-            if (wallSegment.x == potHero.x && wallSegment.y == potHero.y) {
+            if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {
+                console.log("pot",potHero)
+                console.log("wall",wallSegment)
                 return false
         }}
         return true
