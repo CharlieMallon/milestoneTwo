@@ -11,7 +11,7 @@ export function update () {
         y: heroBody[0].y + inputDirection.y
     }
     const legal = wallBody.map(wall => {
-        for (let i=0; i < wall.z; i++) {
+        for (let i=0; i < wall.h; i++) {
             for (let j=0; j < wall.w; j++) {
             const wallSegment = {x: wall.x + j, y: wall.y + i}
             if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {
