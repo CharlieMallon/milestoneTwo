@@ -1,4 +1,5 @@
 import {update as updateHero, draw as drawHero, HERO_SPEED} from '/assets/js/hero.js'
+import {update as updateWall, draw as drawWall} from '/assets/js/board.js'
 
 let lastRenderTime = 0
 const gameBoard = document.getElementById('gameBoard')
@@ -8,7 +9,7 @@ function main (currentTime) {
     window.requestAnimationFrame(main)
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
     if(secondsSinceLastRender < 1 / HERO_SPEED)
-    return
+    {return}
     
     lastRenderTime = currentTime
     
@@ -25,4 +26,5 @@ function update (){
 function draw() {
     gameBoard.innerHTML = ''
     drawHero(gameBoard)
+    drawWall(gameBoard)
 }

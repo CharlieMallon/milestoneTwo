@@ -40,3 +40,15 @@ body {
     background-color: blueviolet;
     border: .5vmin solid black; 
 }
+
+.wall {
+    background-color: black;
+}
+
+.start {
+    background-color: Pink;
+}
+
+.end {
+    background-color: Green;
+}

@@ -1,7 +1,7 @@
 import {getInputDirection} from "/assets/js/input.js"
 
 export const HERO_SPEED = 5
-const heroBody = [{ x:11, y:11}]
+const heroBody = [{ x:1, y:1}]
 
 export function update () {
     const inputDirection = getInputDirection()
