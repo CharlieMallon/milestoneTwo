@@ -1,4 +1,4 @@
-import {update as updateHero, draw as drawHero, HERO_SPEED} from '/assets/js/hero.js'
+import {draw as drawHero, HERO_SPEED} from '/assets/js/hero.js'
 import {update as updateWall, draw as drawWall} from '/assets/js/board.js'
 
 let lastRenderTime = 0
@@ -20,7 +20,7 @@ function main (currentTime) {
 window.requestAnimationFrame(main)
 
 function update (){
-    updateHero()
+
 }
 
 function draw() {
