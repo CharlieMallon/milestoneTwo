@@ -1,4 +1,4 @@
-const wallBody = 
+export const wallBody = 
     [{ w:1, x:1, y:3, z:22},
     { w:4, x:4, y:1, z:20},
     { w:7, x:7, y:3, z:22},
