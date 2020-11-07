@@ -12,19 +12,11 @@ export function update () {
     }
     const legal = wallBody.map(wall => {
         for (let i=0; i < wall.z; i++) {
-            const wallSegment = {x: wall.x, y: wall.y + i}
+            for (let j=0; j < wall.w; j++) {
+            const wallSegment = {x: wall.x + j, y: wall.y + i}
             if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {
                 return false
-        }}
-        for (let i=0; i < wall.w; i++) {
-            const wallSegment = {
-            x: wall.x + i,
-            y: wall.y
             }
-            if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {
-                console.log("pot",potHero)
-                console.log("wall",wallSegment)
-                return false
         }}
         return true
     })

@@ -81,6 +81,12 @@ I have split the features into Beta, Issue 1 & Issue 2.  The project is currentl
 *   #### During coding
     -   The Hero was not able to walk two squares under the wall.  I put in loads of console.logs to see if i could find out why, as far as my code was concerned the wall extended two blocks further than my wall.  This issue due to the way i was defining my walls (start point and end point)
         -   fix - defined the start co-ordinate and the span of the height and width.
+    -   The Hero can walk though the bottom left of a square.
+        -   Only the top and left hand side of the square are being checked if they are a legal move (see table)
+        -   Fix - nest the for loops so each square is being checked.
+X,Y | checked | checked
+checked | not checked | not checked
+checked | not checked | not checked
 
 ## Deployment
 
