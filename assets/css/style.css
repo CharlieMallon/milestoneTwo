@@ -3,6 +3,8 @@
     padding: 0px;
 }
 
+/* Text & Body */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Comic Neue', cursive;
     padding: 10px;
@@ -30,30 +32,12 @@ body {
     font-family: 'Comic Neue', cursive;
 }
 
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-#gameBoard {
-    height: 90vmin;
-    width: 90vmin;
-    display: grid;
-    grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
-    grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
-    background-color: #ccc;
-}
-
-.container {
-    width: 25%;
-}
+/* Standard classes */
 
 .col {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -68,10 +52,15 @@ body {
     border: .25vmin solid black;
 }
 
-.score{
-    height: 100%;
-    width: 60%;
-    text-align: center;
+/* Game & Game Board */
+
+#gameBoard {
+    height: 90vmin;
+    width: 90vmin;
+    display: grid;
+    grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
+    grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
+    background-color: #ccc;
 }
 
 .hero {
@@ -89,4 +78,32 @@ body {
 
 .end {
     border: .25vmin solid Green;
+}
+
+/* How to Play / Score / Customise */
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    width: 25%;
+    max-width: 300px;
+}
+
+.howToPlay{
+    margin-bottom: 20%;
+}
+
+.score{
+    height: 100%;
+    width: 60%;
+    text-align: center;
+}
+
+.customise {
+    margin-top: 20%;
 }
