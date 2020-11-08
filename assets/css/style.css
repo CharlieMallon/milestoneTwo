@@ -46,9 +46,9 @@ body {
 }
 
 .start {
-    background-color: red;
+    border: .25vmin solid red;
 }
 
 .end {
-    background-color: Green;
+    border: .25vmin solid Green;
 }
