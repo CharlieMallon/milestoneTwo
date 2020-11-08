@@ -3,33 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fav Icon-->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/560ce606e6.js" crossorigin="anonymous"></script>
+    <!--My Style Sheet-->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Maze Game</title>
 </head>
 <body>
-        <div id="title">
-            <h1>Maze Game</h1>
+    <div class="title">
+        <h1>Maze Game</h1>
+    </div>
+    <div id="gameBoard"></div>
+    <div class="container">
+        <div class="howToPlay col">
+            <h2>How To Play</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quis sint sit saepe delectus iste reprehenderit reiciendis,
+                beatae maiores. Animi quod aperiam ducimus repellendus excepturi
+                vitae mollitia consequatur minima, possimus consequuntur!</p>
         </div>
-        <div id="gameBoard"></div>
-        <div class="container">
-            <div id="howToPlay">
-                <h2>How To Play</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Quis sint sit saepe delectus iste reprehenderit reiciendis,
-                    beatae maiores. Animi quod aperiam ducimus repellendus excepturi
-                    vitae mollitia consequatur minima, possimus consequuntur!</p>
-            </div>
-            <div class="score">
-                <h2>SCORE</h2>
-                <div class="box">
-                    numbers
-                </div>
-            </div>
-            <div id="customise">
-                <div class="bigBox">Counter</div>
-                <div class="bigBox">Colour</div>
+        <div class="row">
+            <h2>SCORE</h2>
+            <div class="box score">
+                numbers
             </div>
         </div>
+        <div class="customise col">
+            <h2>Customise</h2>
+            <div class="row">
+                <h3>Counter</h3>
+                <p>Counters go here</p>
+            </div>
+            <div class="row">
+                <h3>Colours</h3>
+                <p>Colours go here</p>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="assets/js/game.js" type="module"></script>
 </html>
