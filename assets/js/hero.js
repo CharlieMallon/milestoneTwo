@@ -1,8 +1,9 @@
 import {getInputDirection} from "/assets/js/input.js"
 import {wallBody, endSquare} from "/assets/js/board.js"
+import { startSquare } from "./board.js"
 
 export const HERO_SPEED = 5
-const heroBody = [{ x:2, y:2}]
+const heroBody = [{x:startSquare[0].x, y:startSquare[0].y}]
 
 export function update () {
     const inputDirection = getInputDirection()

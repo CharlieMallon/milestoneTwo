@@ -11,7 +11,7 @@ export const wallBody = [
     { x:19, y:3, w:1, h:19}
     ]
 
-export const startSquare = [{ x:2, y:2 }]
+export const startSquare = [{ x:3, y:2 }]
 
 export const endSquare = [{ x:2, y:10 }]
 
