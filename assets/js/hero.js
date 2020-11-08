@@ -2,7 +2,7 @@ import {getInputDirection} from "/assets/js/input.js"
 import {wallBody} from "/assets/js/board.js"
 
 export const HERO_SPEED = 5
-const heroBody = [{ x:1, y:1}]
+const heroBody = [{ x:2, y:2}]
 
 export function update () {
     const inputDirection = getInputDirection()
@@ -20,6 +20,7 @@ export function update () {
         }}
         return true
     })
+
     if (!legal.includes(false)){
         heroBody[0] = potHero
     }

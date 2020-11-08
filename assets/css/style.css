@@ -22,8 +22,8 @@ body {
     height: 95vmin;
     width: 95vmin;
     display: grid;
-    grid-template-rows: repeat(21, 1fr);
-    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
+    grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
     background-color: #ccc;
 }
 
@@ -38,7 +38,7 @@ body {
 
 .hero {
     background-color: blueviolet;
-    border: .5vmin solid black; 
+    border: .25vmin solid rgb(50, 50, 50); 
 }
 
 .wall {
@@ -46,7 +46,7 @@ body {
 }
 
 .start {
-    background-color: Pink;
+    background-color: red;
 }
 
 .end {
