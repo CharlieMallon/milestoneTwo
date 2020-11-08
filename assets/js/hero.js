@@ -1,5 +1,5 @@
 import {getInputDirection} from "/assets/js/input.js"
-import {wallBody} from "/assets/js/board.js"
+import {wallBody, endSquare} from "/assets/js/board.js"
 
 export const HERO_SPEED = 5
 const heroBody = [{ x:2, y:2}]
@@ -24,6 +24,7 @@ export function update () {
     if (!legal.includes(false)){
         heroBody[0] = potHero
     }
+    checkWin()
 }
 
 export function draw () {
@@ -36,4 +37,14 @@ export function draw () {
         
         gameBoard.appendChild(heroElement)
     })
+}
+
+function checkWin() {
+    const hero = heroBody[0]
+    const end = endSquare[0]
+    if ((hero.x == end.x) && (hero.y == end.y)){
+        if (confirm('You Won! Press OK to restart')) {
+            window.location = "/index.html"
+        }
+    }
 }

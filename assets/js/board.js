@@ -13,7 +13,7 @@ export const wallBody = [
 
 export const startSquare = [{ x:2, y:2 }]
 
-export const endSquare = [{ x:21, y:21 }]
+export const endSquare = [{ x:2, y:10 }]
 
 export function update () {
 
