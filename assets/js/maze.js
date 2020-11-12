@@ -1,5 +1,6 @@
 // Programmer changed constants
 const HERO_SPEED = 3 // Re-fresh rate
+const scoreFactor = 5 // how many points it takes for each move
 const startSquare = [{ x:5, y:2 }]
 const endSquare = [{ x:15, y:21 }]
 
@@ -69,11 +70,11 @@ window.addEventListener('keyup', function() {
 let score = 1000
 
 window.addEventListener('keydown', function() {
-    score = score - 5    
+    score = score - scoreFactor // minuses the scoreFactor every move
 });
 
 function displayTheScore (){
-    document.getElementById('score').innerHTML = score;
+    document.getElementById('score').innerHTML = score; // puts the score on the front page
 }
 
 //Check if we have got to the end
@@ -133,16 +134,16 @@ function drawWall (gameBoard) {
 }
 
 function walls(gameBoard){
-    wallBody.forEach(wall => {
-    const wallElement = document.createElement('div')
-
-    wallElement.style.gridRowStart = wall.y
-    wallElement.style.gridRowEnd = `span ${wall.h}`
-    wallElement.style.gridColumnStart = wall.x
-    wallElement.style.gridColumnEnd = `span ${wall.w}`
-    wallElement.classList.add('wall')
+    wallBody.forEach(wall => {  // for each co-ordinates in wallBody do this loop
+    const wallElement = document.createElement('div')  // every time wallElement is called make a div
+            // gives the div styling to make the walls
+    wallElement.style.gridRowStart = wall.y // horizontal start value 
+    wallElement.style.gridRowEnd = `span ${wall.h}` //  Tells the wall how high to be
+    wallElement.style.gridColumnStart = wall.x // vertical start value 
+    wallElement.style.gridColumnEnd = `span ${wall.w}` //  Tells the wall how wide to be
+    wallElement.classList.add('wall') //  Tells the wall to be a wall
     
-    gameBoard.appendChild(wallElement)
+    gameBoard.appendChild(wallElement)  // adds the wall to the board
 })}
 
 function start(gameBoard){
