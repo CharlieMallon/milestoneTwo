@@ -30,6 +30,7 @@ window.requestAnimationFrame(main)
 // update game
 function update (){
     updateHero ()
+    displayTheScore()
 }
 
 // draw game
@@ -64,6 +65,17 @@ window.addEventListener('keyup', function() {
     updateHero()
 });
 
+//Score
+let score = 1000
+
+window.addEventListener('keydown', function() {
+    score = score - 5    
+});
+
+function displayTheScore (){
+    document.getElementById('score').innerHTML = score;
+}
+
 //Check if we have got to the end
 function checkWin() {
     const hero = heroBody[0]  // get Hero Body 
@@ -97,6 +109,7 @@ function updateHero () {
         heroBody[0] = potHero
     }
     checkWin()
+    
 }
 
 function drawHero () {
