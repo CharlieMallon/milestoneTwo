@@ -1,139 +1,48 @@
-// Programmer changed constants
-const HERO_SPEED = 3 // Re-fresh rate
-const scoreFactor = 5 // how many points it takes for each move
-const startSquare = [{ x:5, y:2 }]
-const endSquare = [{ x:15, y:21 }]
+Swal.fire({
+    title: 'Maze Game',
+    text:"How to play the maze game",
+    confirmButtonText: `Lets Play`,
+    confirmButtonColor: '#3085d6',
+    }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+        draw() // Draw Game board
+    }
+    })
 
-// global constants
-let lastRenderTime = 0
-const gameBoard = document.getElementById('gameBoard')  // Gets the game board 
-const heroBody = [{x:startSquare[0].x, y:startSquare[0].y}]  // start position of the Hero
-let inputDirection = { x: 0, y:0 } // current input direction, changes based on event listener
-//const playing = true  //
-
-// main game loop
-function main (currentTime) {
-    
-        window.requestAnimationFrame(main)
-        const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
-        if(secondsSinceLastRender < 1 / HERO_SPEED)
-        {return}
-    
-        lastRenderTime = currentTime
-
-        update()
-        draw()
-}
-
-// starts Game Loop of
-window.requestAnimationFrame(main)
-
-// update game
-function update (){
-    updateHero ()
-    displayTheScore()
-}
-
-// draw game
-function draw() {
+function draw(){
     gameBoard.innerHTML = ''
     drawHero(gameBoard)
     drawWall(gameBoard)
+    drawEnd(gameBoard)
 }
 
-//User inputs
-    // when key is pressed global constant is updated
-window.addEventListener('keydown', e=> {
-    switch (e.key){
-        case 'ArrowUp':
-            inputDirection = { x: 0, y: -1 } 
-            break
-        case 'ArrowDown':
-            inputDirection = { x: 0, y: 1 }
-            break
-        case 'ArrowLeft':
-            inputDirection = { x: -1, y: 0 }
-            break
-        case 'ArrowRight':
-            inputDirection = { x: 1, y: 0 }
-            break
-    }
-    updateHero()
-})
-    // when key is released global constant is re-set to 0 (so Hero doesn't move)
-window.addEventListener('keyup', function() {
-        inputDirection = { x: 0, y: 0 }
-    updateHero()
-});
+const startSquare = { x:5, y:2 }  // Hero Start
+const endSquare = { x:15, y:21 }  // Exit of Maze
 
-//Score
-let score = 1000
-
-window.addEventListener('keydown', function() {
-    score = score - scoreFactor // minuses the scoreFactor every move
-});
-
-function displayTheScore (){
-    document.getElementById('score').innerHTML = score; // puts the score on the front page
+function drawHero(gameBoard){
+    const hero = startSquare
+    const heroElement = document.createElement('div')
+// gives the div styling to make the Hero
+    heroElement.style.gridRow = hero.y
+    heroElement.style.gridColumn = hero.x
+    heroElement.classList.add('hero')
+// adds the Hero to the board
+    gameBoard.appendChild(heroElement)
 }
 
-//Check if we have got to the end
-function checkWin() {
-    const hero = heroBody[0]  // get Hero Body 
-    const end = endSquare[0]  // get End Square
-    if ((hero.x == end.x) && (hero.y == end.y)){  // compare x and y
-        if (confirm('You Won! Press Cancel to restart')) {  // if the say you win
-            window.location = "/index.html" // when ok pressed re-fresh window
-        }
-    }
+function drawEnd(gameBoard) {
+    const end = endSquare
+    const endElement = document.createElement('div')
+// gives the div styling to make the Hero
+    endElement.style.gridRowStart = end.y
+    endElement.style.gridColumnStart = end.x
+    endElement.classList.add('end')
+// adds the Hero to the board
+    gameBoard.appendChild(endElement)
 }
 
-//Hero Code
-function updateHero () {
-    const potHero = {  // Potential Hero =  hero + input position
-        x: heroBody[0].x + inputDirection.x,
-        y: heroBody[0].y + inputDirection.y
-    }
-    // checks if the move is legal
-    const legal = wallBody.map(wall => {  // for each of the co-ordinates in wallBody (bottom of page) map the result of this loop
-        for (let i=0; i < wall.h; i++) {  // if the wall height is less than i then increase i by one
-            for (let j=0; j < wall.w; j++) {    // if the wall width is less than j then increase j by one
-            const wallSegment = {x: wall.x + j, y: wall.y + i}  // set the wallSegments to X co-ordinate plus j (width) and Y co-ordinate plus i (height) this makes sure that each of the 'walls' in the row are checked
-            if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {  // if Potential Hero = a Wall segment then return False
-                return false
-            }
-        }}
-        return true  //if you get here return True
-    })
-
-    if (!legal.includes(false)){  // if the map of Wall Body doesn't have a false then move Hero Body to Potential Hero Space
-        heroBody[0] = potHero
-    }
-    checkWin()
-    
-}
-
-function drawHero () {
-    heroBody.forEach(hero => {
-        const heroElement = document.createElement('div')
-
-        heroElement.style.gridRow = hero.y
-        heroElement.style.gridColumn = hero.x
-        heroElement.classList.add('hero')
-        
-        gameBoard.appendChild(heroElement)
-    })
-}
-
-//Board code
-
-function drawWall (gameBoard) {
-    walls(gameBoard)
-    start (gameBoard)
-    end (gameBoard)
-}
-
-function walls(gameBoard){
+function drawWall(gameBoard){
     wallBody.forEach(wall => {  // for each co-ordinates in wallBody do this loop
     const wallElement = document.createElement('div')  // every time wallElement is called make a div
             // gives the div styling to make the walls
@@ -146,31 +55,8 @@ function walls(gameBoard){
     gameBoard.appendChild(wallElement)  // adds the wall to the board
 })}
 
-function start(gameBoard){
-    startSquare.forEach(start => {
-        const startElement = document.createElement('div')
 
-        startElement.style.gridRowStart = start.y
-        startElement.style.gridColumnStart = start.x
-        startElement.classList.add('start')
-        
-        gameBoard.appendChild(startElement)
-    })
-}
-
-function end(gameBoard){
-    endSquare.forEach(end => {
-        const endElement = document.createElement('div')
-
-        endElement.style.gridRowStart = end.y
-        endElement.style.gridColumnStart = end.x
-        endElement.classList.add('end')
-        
-        gameBoard.appendChild(endElement)
-    })
-}
-
-// Maze Maps
+// Mazes
 
 const wallBody = [
     // x + Y = start ref, W = width, H = height
