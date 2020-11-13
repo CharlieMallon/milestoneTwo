@@ -3,6 +3,7 @@
     // Maze 1
     const startSquare1 = { x:5, y:2 }  // Hero Start
     const endSquare1 = { x:15, y:21 }  // Exit of Maze
+    const endSquare1b = { x:21, y:7 }  // Exit of Maze
     const wallBody1 = [
         // x + Y = start ref, W = width, H = height
         // Edge of Game Board
@@ -138,7 +139,7 @@ function draw(){
 }
 
 const startSquare = startSquare1  // Hero Start
-const endSquare = endSquare1  // Exit of Maze
+let endSquare = endSquare1  // Exit of Maze
 const wallBody = wallBody1
 let hero = startSquare
 
@@ -184,11 +185,9 @@ let potHero = { x:hero.x, y:hero.y }
 
 function moveHero(){
     direction()
-    // console.log("hero", hero, "potHero", potHero)
     legal()
-    // console.log("hero", hero)
     draw(gameBoard)
-    //checkWin()
+    checkWin()
 }
 
 function direction(){
@@ -219,5 +218,44 @@ function legal(){
     if (!legal.includes(false)){  // if the map of Wall Body doesn't have a false then move Hero Body to Potential Hero Space
         hero = potHero
     }
+}
+
+//Check if we have got to the end
+function checkWin() {
+    const end = { x:endSquare.x, y:endSquare.y }  // get End Square
+    if ((hero.x == end.x) && (hero.y == end.y)){  // compare x and y
+        win()
+    }
+}
+
+//---------- Win Functions ----------//
+
+function win(){
+    Swal.fire({
+        title: 'YAY! You won!',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: `Play Again?`,
+        denyButtonText: `Next Level`,
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            reDraw()
+        } else if (result.isDenied) {
+            Swal.fire('Find the Exit!')
+            newExit()
+        }
+    })
+}
+
+function reDraw(){
+    hero = startSquare
+    draw()
+}
+
+function newExit(){
+    hero = startSquare
+    endSquare = endSquare1b
+    draw()
 }
 
