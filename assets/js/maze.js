@@ -136,6 +136,7 @@ function draw(){
     drawHero(gameBoard)
     drawWall(gameBoard)
     drawEnd(gameBoard)
+    displayTheScore()
 }
 
 const startSquare = startSquare1  // Hero Start
@@ -233,6 +234,7 @@ function checkWin() {
 function win(){
     Swal.fire({
         title: 'YAY! You won!',
+        text: "You Scored " + score,
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: `Play Again?`,
@@ -249,13 +251,27 @@ function win(){
 }
 
 function reDraw(){
+    score = 1000
     hero = startSquare
     draw()
 }
 
 function newExit(){
+    score = score + 1000
     hero = startSquare
     endSquare = endSquare1b
     draw()
 }
 
+//---------- Score Functions ----------//
+
+let score = 1000
+const scoreFactor = 5
+
+window.addEventListener('keydown', function() {
+    score = score - scoreFactor // minuses the scoreFactor every move
+});
+
+function displayTheScore (){
+    document.getElementById('score').innerHTML = score; // puts the score on the front page
+}
