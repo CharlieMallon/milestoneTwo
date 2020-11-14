@@ -116,12 +116,19 @@ window.addEventListener('keydown', e=> {
 
 //---------- Start up code ----------//
 
+
 //  Start Modal
 Swal.fire({
     title: 'Maze Game',
     text:"How to play the maze game",
     confirmButtonText: `Lets Play`,
     confirmButtonColor: '#3085d6',
+    width: 600,
+    padding: '3em',
+    background: '#fff',
+    backdrop: `
+        rgba(0,0,123,0.5)
+    `
     }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
@@ -239,6 +246,15 @@ function win(){
         showCancelButton: true,
         confirmButtonText: `Play Again?`,
         denyButtonText: `Next Level`,
+        width: 600,
+        padding: '3em',
+        background: '#fff',
+        backdrop: `
+            rgba(0,0,123,0.5)
+            url("https://media.giphy.com/media/WNJATm9pwnjpjI1i0g/giphy.gif")
+            left top
+            repeat
+        `
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {

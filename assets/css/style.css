@@ -3,10 +3,22 @@
     padding: 0px;
 }
 
+/* colours */
+
+:root {
+    --background: #ccc;
+    --gameBoard: #ccc;
+    --hero: rgb(111, 20, 202);
+    --border: rgb(50, 50, 50);
+    --wall: black;
+    --text: black;
+}
+
 /* Text & Body */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Comic Neue', cursive;
+    color: var(--text);
 }
 
 h1 {
@@ -29,6 +41,8 @@ body {
     justify-content: space-evenly;
     align-items: center;
     font-family: 'Comic Neue', cursive;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* Standard classes */
@@ -49,24 +63,22 @@ body {
     display: grid;
     grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
     grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
-    background-color: #ccc;
+    background-color: var(--gameBoard);
 }
 
 .hero {
-    background-color: blueviolet;
-    border: .25vmin solid rgb(50, 50, 50); 
+    background-color: var(--hero);
+    border: .25vmin solid ; 
 }
 
 .wall {
-    background-color: black;
+    background-color: var(--wall);
 }
 
-.start {
-    border: .25vmin solid red;
-}
+
 
 .end {
-    border: .25vmin solid Green;
+    border: .5vmin solid Green;
 }
 
 /* Title / Score */
@@ -89,5 +101,5 @@ body {
     height: 30px;
     width: 50%;
     text-align: center;
-    border: .25vmin solid black;
+    border: .25vmin solid var(--border);
 }
