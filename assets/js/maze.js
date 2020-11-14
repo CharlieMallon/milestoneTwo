@@ -325,13 +325,8 @@ function win(){
         if (result.isConfirmed) {
             reStart()
         } else if (result.isDenied) {
-            if(level == totalLevels){
-                Swal.fire('sorry no more levels, Play Again?')
-                reStart()
-            } else {
-                Swal.fire('Find the Exit!')
-                nextLevel()
-            }
+            Swal.fire('Find the Exit!')
+            nextLevel()
         }
     })
 }
