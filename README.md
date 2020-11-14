@@ -2,8 +2,6 @@
 
 This is a simple maze game with some fun features and should hopefully show of my coding Knowledge so far.
 
-[Trello Board](https://trello.com/b/oC1N2gRU/milestone-2-project)
-
 ## User Experience (UX)
 
 -   ### User stories
@@ -31,7 +29,7 @@ This is a simple maze game with some fun features and should hopefully show of m
 
 *   ### Wireframes
 
-    -    General Game Wireframes - [View](assets/wireframes/genral-game-ideas.png)
+    -    General Game Wireframes - [View](assets/wireframes/general-game-ideas.png)
 
     -   Mobile Wireframes - [Idea 1](assets/wireframes/phone1.png) [Idea 2](assets/wireframes/phone2.png)
 
@@ -73,7 +71,9 @@ I have split the features into Beta, Issue 1 & Issue 2.  The project is currentl
 
 ### Frameworks, Libraries & Programs Used
 
-1. 
+1. [SweetAlert2](https://sweetalert2.github.io/)
+2. [Google Fonts](https://fonts.google.com/)
+3. [Font Awesome](https://fontawesome.com/)
 
 ## Testing
 
@@ -84,9 +84,9 @@ I have split the features into Beta, Issue 1 & Issue 2.  The project is currentl
     -   The Hero can walk though the bottom left of a square.
         -   Only the top and left hand side of the square are being checked if they are a legal move (see table)
         -   Fix - nest the for loops so each square is being checked.
-X,Y | checked | checked
-checked | not checked | not checked
-checked | not checked | not checked
+|   X,Y  | checked     | checked     |
+|checked | not checked | not checked |
+|checked | not checked | not checked |
 
 *   #### Durning testing
     -   The hero continues to walk when and arrow key is followed by any other key. solution - default case to the switch.
@@ -105,8 +105,9 @@ checked | not checked | not checked
 
 ### Media
 
--   
+-   [justy](https://giphy.com/justy) on [giphy.com](https://giphy.com) for the confetti background
 
 ### Acknowledgements
 
--   
+-   mentor
+-   Bim
