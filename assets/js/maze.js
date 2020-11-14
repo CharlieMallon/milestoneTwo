@@ -110,6 +110,8 @@ window.addEventListener('keydown', e=> {
         case 'ArrowRight':
             inputDirection = "right"
             break
+        default:
+            inputDirection = "none"
     }
     moveHero()
 })

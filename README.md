@@ -88,6 +88,9 @@ X,Y | checked | checked
 checked | not checked | not checked
 checked | not checked | not checked
 
+*   #### Durning testing
+    -   The hero continues to walk when and arrow key is followed by any other key. solution - default case to the switch.
+
 ## Deployment
 
 ## Credits
