@@ -3,7 +3,7 @@
     // Maze 1
     const startSquare1 = { x:5, y:2 }  // Hero Start
     const endSquare1 = { x:15, y:21 }  // Exit of Maze
-    const endSquare1b = { x:21, y:7 }  // Exit of Maze
+    const endSquare1b = { x:21, y:7 }  // New Exit of Maze
     const wallBody1 = [
         // x + Y = start ref, W = width, H = height
         // Edge of Game Board
@@ -68,8 +68,9 @@
     ]
 
     // Maze 2
-    const startSquare2 = { x:2, y:21 }  // Hero Start
-    const endSquare2 = { x:21, y:2 }  // Exit of Maze
+    const startSquare2 = { x:2, y:16 }    // Hero Start
+    const endSquare2 = { x:4, y:2 }  // Exit of Maze
+    const endSquare2b = { x:21, y:2 }  // Exit of Maze
     const wallBody2 = [
         // x + Y = start ref, W = width, H = height
         // Edge of Game Board
@@ -78,6 +79,69 @@
         { x:22, y:1, w:1, h:21},
         { x:1, y:22, w:22, h:1},
         // Maze internals
+        { x:3, y:2, w:1, h:1, }, 
+        { x:5, y:2, w:3, h:1, }, 
+        { x:11, y:2, w:3, h:1, }, 
+        { x:17, y:2, w:1, h:1, }, 
+        { x:5, y:3, w:1, h:1, }, 
+        { x:9, y:3, w:1, h:3, }, 
+        { x:13, y:3, w:2, h:1, }, 
+        { x:16, y:3, w:5, h:1, }, 
+        { x:3, y:4, w:5, h:1, }, 
+        { x:10, y:4, w:2, h:1, }, 
+        { x:13, y:4, w:1, h:6, }, 
+        { x:17, y:4, w:1, h:1, }, 
+        { x:20, y:4, w:1, h:1, }, 
+        { x:15, y:5, w:1, h:1, }, 
+        { x:2, y:6, w:4, h:1, }, 
+        { x:7, y:6, w:5, h:1, }, 
+        { x:14, y:6, w:5, h:1, }, 
+        { x:20, y:6, w:2, h:1, }, 
+        { x:7, y:7, w:1, h:4, }, 
+        { x:21, y:7, w:1, h:1, }, 
+        { x:3, y:8, w:1, h:4, }, 
+        { x:5, y:8, w:1, h:2, }, 
+        { x:6, y:8, w:1, h:1, }, 
+        { x:9, y:8, w:4, h:1, }, 
+        { x:15, y:8, w:5, h:1, }, 
+        { x:15, y:9, w:1, h:3, }, 
+        { x:19, y:9, w:2, h:1, }, 
+        { x:8, y:10, w:4, h:1, }, 
+        { x:16, y:10, w:1, h:1, }, 
+        { x:18, y:10, w:2, h:1, }, 
+        { x:4, y:11, w:4, h:1, }, 
+        { x:11, y:11, w:4, h:1, }, 
+        { x:19, y:11, w:1, h:1, }, 
+        { x:21, y:11, w:1, h:1, }, 
+        { x:4, y:12, w:1, h:2, }, 
+        { x:6, y:12, w:1, h:3, }, 
+        { x:9, y:12, w:1, h:1, }, 
+        { x:17, y:12, w:1, h:1, }, 
+        { x:2, y:13, w:1, h:3, }, 
+        { x:8, y:13, w:11, h:1, }, 
+        { x:20, y:13, w:1, h:2, }, 
+        { x:9, y:14, w:1, h:1, }, 
+        { x:3, y:15, w:1, h:4, }, 
+        { x:4, y:15, w:3, h:1, }, 
+        { x:7, y:15, w:1, h:4, }, 
+        { x:11, y:15, w:1, h:1, }, 
+        { x:13, y:15, w:4, h:1, }, 
+        { x:18, y:15, w:1, h:2, }, 
+        { x:20, y:15, w:2, h:1, }, 
+        { x:9, y:16, w:5, h:1, }, 
+        { x:5, y:17, w:1, h:3, }, 
+        { x:9, y:17, w:1, h:5, }, 
+        { x:11, y:17, w:1, h:4, }, 
+        { x:15, y:17, w:6, h:1, }, 
+        { x:13, y:18, w:3, h:1, }, 
+        { x:17, y:18, w:1, h:1, }, 
+        { x:15, y:19, w:1, h:1, }, 
+        { x:19, y:19, w:2, h:1, }, 
+        { x:2, y:20, w:4, h:1, }, 
+        { x:7, y:20, w:2, h:1, }, 
+        { x:12, y:20, w:2, h:1, }, 
+        { x:15, y:20, w:5, h:1, }, 
+        { x:21, y:21, w:1, h:1, },        
     ]
 
     // Maze 3
@@ -147,9 +211,9 @@ function draw(){
     displayTheScore()
 }
 
-let startSquare = startSquare1  // Hero Start
-let endSquare = endSquare1  // Exit of Maze
-let wallBody = wallBody1
+let startSquare = startSquare2  // Hero Start
+let endSquare = endSquare2  // Exit of Maze
+let wallBody = wallBody2
 let hero = startSquare
 
 function drawHero(gameBoard){
@@ -286,7 +350,7 @@ function reStart(){
 function newExit(){
     score = score + 1000
     hero = startSquare
-    endSquare = endSquare1b
+    endSquare = endSquare2b
     draw()
 }
 
@@ -306,4 +370,4 @@ function displayTheScore (){
 //---------- level Functions ----------//
 
 let level = 1
-const totalLevels = 2
+const totalLevels = 4
