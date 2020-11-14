@@ -7,7 +7,6 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Comic Neue', cursive;
-    padding: 10px;
 }
 
 h1 {
@@ -34,22 +33,12 @@ body {
 
 /* Standard classes */
 
-.col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
-
-.box{
-    border: .25vmin solid black;
+    width: 100%;
 }
 
 /* Game & Game Board */
@@ -80,30 +69,25 @@ body {
     border: .25vmin solid Green;
 }
 
-/* How to Play / Score / Customise */
+/* Title / Score */
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
 }
 
-.container {
+.right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 25%;
-    max-width: 300px;
 }
 
-.howToPlay{
-    margin-bottom: 20%;
-}
-
-.score{
-    height: 100%;
-    width: 60%;
+.scoreBox{
+    height: 30px;
+    width: 50%;
     text-align: center;
-}
-
-.customise {
-    margin-top: 20%;
+    border: .25vmin solid black;
 }
