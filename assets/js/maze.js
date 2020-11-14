@@ -144,18 +144,18 @@
         { x:21, y:21, w:1, h:1, },        
     ]
 
-    // Maze 3
-    const startSquare3 = { x:2, y:21 }  // Hero Start
-    const endSquare3 = { x:21, y:2 }  // Exit of Maze
-    const wallBody3 = [
-        // x + Y = start ref, W = width, H = height
-        // Edge of Game Board
-        { x:1, y:1, w:1, h:22},
-        { x:1, y:1, w:22, h:1},
-        { x:22, y:1, w:1, h:21},
-        { x:1, y:22, w:22, h:1},
-        // Maze internals
-    ]
+    // // Maze 3
+    // const startSquare3 = { x:2, y:21 }  // Hero Start
+    // const endSquare3 = { x:21, y:2 }  // Exit of Maze
+    // const wallBody3 = [
+    //     // x + Y = start ref, W = width, H = height
+    //     // Edge of Game Board
+    //     { x:1, y:1, w:1, h:22},
+    //     { x:1, y:1, w:22, h:1},
+    //     { x:22, y:1, w:1, h:21},
+    //     { x:1, y:22, w:22, h:1},
+    //     // Maze internals
+    // ]
 
 //---------- Event Listeners ----------//
 let inputDirection = " "
@@ -211,10 +211,9 @@ function draw(){
     displayTheScore()
 }
 
-let startSquare = startSquare2  // Hero Start
-let endSquare = endSquare2  // Exit of Maze
-let wallBody = wallBody2
-let hero = startSquare
+let hero = startSquare1  // Hero Start
+let endSquare = endSquare1  // Exit of Maze
+let wallBody = wallBody1
 
 function drawHero(gameBoard){
     const heroElement = document.createElement('div')
@@ -326,14 +325,12 @@ function win(){
         if (result.isConfirmed) {
             reStart()
         } else if (result.isDenied) {
-            console.log("l", level, "tL", totalLevels)
             if(level == totalLevels){
                 Swal.fire('sorry no more levels, Play Again?')
                 reStart()
             } else {
                 Swal.fire('Find the Exit!')
-                level = level + 1
-                newExit()
+                nextLevel()
             }
         }
     })
@@ -341,16 +338,10 @@ function win(){
 
 function reStart(){
     score = 1000
-    startSquare = startSquare1
+    hero = startSquare1
     endSquare = endSquare1
-    hero = startSquare
-    draw()
-}
-
-function newExit(){
-    score = score + 1000
-    hero = startSquare
-    endSquare = endSquare2b
+    wallBody = wallBody1
+    level = 0
     draw()
 }
 
@@ -369,5 +360,34 @@ function displayTheScore (){
 
 //---------- level Functions ----------//
 
-let level = 1
-const totalLevels = 4
+let level = 0
+
+function nextLevel(){
+    score = score + 1000
+    level = level + 1
+    switch (level) {
+        case 1:
+            hero = startSquare2;  // Hero Start
+            endSquare = endSquare2;  // Exit of Maze
+            wallBody = wallBody2;
+            console.log("2","start", hero, "end", endSquare, "wall", wallBody)
+            break;
+        case 2:
+            hero = startSquare1;  // Hero Start
+            endSquare = endSquare1b;  // Exit of Maze
+            wallBody = wallBody1;
+            console.log("1b","start", hero, "end", endSquare, "wall", wallBody)
+            break;
+        case 3:
+            hero = startSquare2;  // Hero Start
+            endSquare = endSquare2b;  // Exit of Maze
+            wallBody = wallBody2;
+            console.log("2b","start", hero, "end", endSquare, "wall", wallBody)
+            break;
+        default:
+            Swal.fire('sorry no more levels, Play Again?')
+            reStart()
+    }
+
+    draw()
+}
