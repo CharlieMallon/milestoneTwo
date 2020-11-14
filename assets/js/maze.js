@@ -116,7 +116,6 @@ window.addEventListener('keydown', e=> {
 
 //---------- Start up code ----------//
 
-
 //  Start Modal
 Swal.fire({
     title: 'Maze Game',
@@ -165,6 +164,7 @@ function drawEnd(gameBoard) {
     const end = endSquare
     const endElement = document.createElement('div')
 // gives the div styling to make the Hero
+    endElement.innerHTML = '<i class="fas fa-door-open"></i>'
     endElement.style.gridRowStart = end.y
     endElement.style.gridColumnStart = end.x
     endElement.classList.add('end')
@@ -258,7 +258,7 @@ function win(){
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            reDraw()
+            reStart()
         } else if (result.isDenied) {
             console.log("l", level, "tL", totalLevels)
             if(level == totalLevels){

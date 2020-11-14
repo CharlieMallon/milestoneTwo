@@ -75,10 +75,16 @@ body {
     background-color: var(--wall);
 }
 
-
-
 .end {
     border: .5vmin solid Green;
+    text-align: center;
+}
+
+i {
+    color: Green;
+    font-size: 150%;
+    padding-top: 20%;
+    padding-bottom: 20%;
 }
 
 /* Title / Score */
@@ -101,5 +107,6 @@ body {
     height: 30px;
     width: 50%;
     text-align: center;
+    line-height: 30px;
     border: .25vmin solid var(--border);
 }
