@@ -174,6 +174,30 @@ window.addEventListener('keydown', e=> {
         case 'ArrowRight':
             inputDirection = "right"
             break
+        case 'w':
+            inputDirection = "up"
+            break
+        case 's':
+            inputDirection = "down"
+            break
+        case 'a':
+            inputDirection = "left"
+            break
+        case 'd':
+            inputDirection = "right"
+            break
+        case '8':
+            inputDirection = "up"
+            break
+        case '2':
+            inputDirection = "down"
+            break
+        case '4':
+            inputDirection = "left"
+            break
+        case '6':
+            inputDirection = "right"
+            break
         default:
             inputDirection = "none"
     }
