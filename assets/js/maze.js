@@ -184,8 +184,13 @@ window.addEventListener('keydown', e=> {
 
 //  Start Modal
 Swal.fire({
-    title: 'Maze Game',
-    text:"How to play the maze game",
+    title: 'How to play',
+    html: 'Navigate through the maze to the exit  ' +
+    '<i class="fas fa-door-open"></i>' +
+    '<br></br>' + 
+    '<img src="assets/img/keys.gif" alt="keys gif"></img>' +
+    '<br></br>' +
+    'Using either the arrow keys, number pad or WASD keys.',
     confirmButtonText: `Lets Play`,
     confirmButtonColor: '#3085d6',
     width: 600,
@@ -200,6 +205,8 @@ Swal.fire({
         draw() // Draw Game board
     }
     })
+
+    
 
 //---------- Draw Functions ----------//
 
@@ -309,7 +316,9 @@ function win(){
         text: "You Scored " + score,
         showDenyButton: true,
         showCancelButton: true,
-        confirmButtonText: `Play Again?`,
+        confirmButtonColor: '#3085d6',
+        denyButtonColor: 'rgb(23, 173, 23)',
+        confirmButtonText: `Restart?`,
         denyButtonText: `Next Level`,
         width: 600,
         padding: '3em',

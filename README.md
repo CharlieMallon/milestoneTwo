@@ -106,6 +106,7 @@ I have split the features into Beta, Issue 1 & Issue 2.  The project is currentl
 ### Media
 
 -   [justy](https://giphy.com/justy) on [giphy.com](https://giphy.com) for the confetti background
+-   [imgflip](https://imgflip.com/gif-maker?from=images) was used to make the keys.gif
 
 ### Acknowledgements
 

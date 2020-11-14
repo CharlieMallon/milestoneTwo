@@ -16,6 +16,10 @@
 
 /* Text & Body */
 
+p {
+    line-height: 1px
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Comic Neue', cursive;
     color: var(--text);
@@ -76,15 +80,15 @@ body {
 }
 
 .end {
-    border: .5vmin solid Green;
+    border: .25vmin solid rgb(23, 173, 23);
     text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 i {
     color: Green;
     font-size: 150%;
-    padding-top: 20%;
-    padding-bottom: 20%;
 }
 
 /* Title / Score */
