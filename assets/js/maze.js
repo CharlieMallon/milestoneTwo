@@ -144,18 +144,86 @@
         { x:21, y:21, w:1, h:1, },        
     ]
 
-    // // Maze 3
-    // const startSquare3 = { x:2, y:21 }  // Hero Start
-    // const endSquare3 = { x:21, y:2 }  // Exit of Maze
-    // const wallBody3 = [
-    //     // x + Y = start ref, W = width, H = height
-    //     // Edge of Game Board
-    //     { x:1, y:1, w:1, h:22},
-    //     { x:1, y:1, w:22, h:1},
-    //     { x:22, y:1, w:1, h:21},
-    //     { x:1, y:22, w:22, h:1},
-    //     // Maze internals
-    // ]
+    // Maze 3
+    const startSquare3 = { x:17, y:2 }    // Hero Start
+    const endSquare3 = { x:7, y:21 }    // Exit of Maze
+    const endSquare3b = { x:13, y:7 }    // Exit of Maze
+    const wallBody3 = [
+        // x + Y = start ref, W = width, H = height
+        // Edge of Game Board
+        { x:1, y:1, w:1, h:22},
+        { x:1, y:1, w:22, h:1},
+        { x:22, y:1, w:1, h:21},
+        { x:1, y:22, w:22, h:1},
+        // Maze internals
+        { x:2, y:2, w:1, h:4, }, 
+        { x:9, y:2, w:3, h:1, }, 
+        { x:15, y:2, w:1, h:2, }, 
+        { x:18, y:2, w:1, h:2, }, 
+        { x:4, y:3, w:4, h:1, }, 
+        { x:13, y:3, w:1, h:2, }, 
+        { x:17, y:3, w:1, h:3, }, 
+        { x:20, y:3, w:2, h:1, }, 
+        { x:5, y:4, w:1, h:1, }, 
+        { x:7, y:4, w:6, h:1, }, 
+        { x:3, y:5, w:1, h:1, }, 
+        { x:7, y:5, w:1, h:1, }, 
+        { x:11, y:5, w:1, h:1, }, 
+        { x:15, y:5, w:2, h:1, }, 
+        { x:19, y:5, w:1, h:2, }, 
+        { x:21, y:5, w:1, h:1, }, 
+        { x:5, y:6, w:5, h:1, }, 
+        { x:11, y:6, w:5, h:1, }, 
+        { x:3, y:7, w:3, h:1, }, 
+        { x:12, y:7, w:1, h:1, }, 
+        { x:17, y:7, w:4, h:1, }, 
+        { x:5, y:8, w:1, h:1, }, 
+        { x:7, y:8, w:4, h:1, }, 
+        { x:12, y:8, w:6, h:1, }, 
+        { x:3, y:9, w:1, h:1, }, 
+        { x:7, y:9, w:1, h:1, }, 
+        { x:17, y:9, w:1, h:1, }, 
+        { x:19, y:9, w:1, h:8, }, 
+        { x:21, y:9, w:1, h:1, }, 
+        { x:2, y:10, w:8, h:1, }, 
+        { x:11, y:10, w:5, h:1, }, 
+        { x:2, y:11, w:1, h:2, }, 
+        { x:5, y:11, w:1, h:1, }, 
+        { x:9, y:11, w:1, h:4, }, 
+        { x:13, y:11, w:1, h:3, }, 
+        { x:15, y:11, w:3, h:1, }, 
+        { x:20, y:11, w:1, h:1, }, 
+        { x:4, y:12, w:4, h:1, }, 
+        { x:11, y:12, w:2, h:1, }, 
+        { x:14, y:13, w:5, h:1, }, 
+        { x:11, y:13, w:1, h:4, }, 
+        { x:21, y:13, w:1, h:2, }, 
+        { x:3, y:14, w:5, h:1, }, 
+        { x:10, y:14, w:1, h:1, }, 
+        { x:7, y:15, w:1, h:2, }, 
+        { x:13, y:15, w:1, h:2, }, 
+        { x:15, y:15, w:3, h:1, }, 
+        { x:2, y:16, w:1, h:2, }, 
+        { x:3, y:16, w:3, h:1, }, 
+        { x:8, y:16, w:2, h:1, }, 
+        { x:12, y:16, w:1, h:1, }, 
+        { x:15, y:16, w:1, h:5, }, 
+        { x:17, y:16, w:1, h:3, }, 
+        { x:20, y:16, w:1, h:5, }, 
+        { x:9, y:17, w:1, h:1, }, 
+        { x:4, y:18, w:10, h:1, }, 
+        { x:18, y:18, w:1, h:1, }, 
+        { x:3, y:19, w:2, h:1, }, 
+        { x:13, y:19, w:1, h:3, }, 
+        { x:4, y:20, w:1, h:1, }, 
+        { x:6, y:20, w:3, h:1, }, 
+        { x:10, y:20, w:2, h:1, }, 
+        { x:14, y:20, w:1, h:1, }, 
+        { x:18, y:20, w:2, h:1, }, 
+        { x:2, y:21, w:1, h:1, }, 
+        { x:6, y:21, w:1, h:1, }, 
+        { x:10, y:21, w:1, h:1, },
+    ]
 
 //---------- Event Listeners ----------//
 let inputDirection = " "
@@ -401,15 +469,27 @@ function nextLevel(){
             console.log("2","start", hero, "end", endSquare, "wall", wallBody)
             break;
         case 2:
+            hero = startSquare3;  // Hero Start
+            endSquare = endSquare3;  // Exit of Maze
+            wallBody = wallBody3;
+            console.log("1b","start", hero, "end", endSquare, "wall", wallBody)
+            break;
+        case 3:
             hero = startSquare1;  // Hero Start
             endSquare = endSquare1b;  // Exit of Maze
             wallBody = wallBody1;
             console.log("1b","start", hero, "end", endSquare, "wall", wallBody)
             break;
-        case 3:
+        case 4:
             hero = startSquare2;  // Hero Start
             endSquare = endSquare2b;  // Exit of Maze
             wallBody = wallBody2;
+            console.log("2b","start", hero, "end", endSquare, "wall", wallBody)
+            break;
+        case 5:
+            hero = startSquare3;  // Hero Start
+            endSquare = endSquare3b;  // Exit of Maze
+            wallBody = wallBody3;
             console.log("2b","start", hero, "end", endSquare, "wall", wallBody)
             break;
         default:
