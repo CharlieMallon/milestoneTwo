@@ -228,49 +228,50 @@
 //---------- Event Listeners ----------//
 let inputDirection = " "
 
-window.addEventListener('keydown', e=> {
-    switch (e.key){
+function whichDirection (input) {
+    switch (input){
         case 'ArrowUp':
-            inputDirection = "up"
-            break
-        case 'ArrowDown':
-            inputDirection = "down"
-            break
-        case 'ArrowLeft':
-            inputDirection = "left"
-            break
-        case 'ArrowRight':
-            inputDirection = "right"
-            break
         case 'w':
-            inputDirection = "up"
-            break
-        case 's':
-            inputDirection = "down"
-            break
-        case 'a':
-            inputDirection = "left"
-            break
-        case 'd':
-            inputDirection = "right"
-            break
         case '8':
             inputDirection = "up"
             break
-        case '2':
-            inputDirection = "down"
-            break
+        case 'ArrowLeft':
         case '4':
+        case 'a':
             inputDirection = "left"
             break
+        case 'ArrowRight':
         case '6':
+        case 'd':
             inputDirection = "right"
+            break
+        case 'ArrowDown':
+        case '2':
+        case 's':
+            inputDirection = "down"
             break
         default:
             inputDirection = "none"
     }
-    moveHero()
+}
+
+window.addEventListener('keydown', e=> {
+    whichDirection(e.key);
+    moveHero();
 })
+
+
+//-----------Button Clicks----------//
+
+const squareButt = document.getElementsByClassName( "square-butt" )
+
+for (let i=0; i < squareButt.length; i++){
+    squareButt[i].addEventListener("click", function(e) {
+        const direction = e.target.id
+        whichDirection(direction);
+        moveHero();
+    })
+}
 
 //---------- Start up code ----------//
 
@@ -466,31 +467,26 @@ function nextLevel(){
             hero = startSquare2;  // Hero Start
             endSquare = endSquare2;  // Exit of Maze
             wallBody = wallBody2;
-            console.log("2","start", hero, "end", endSquare, "wall", wallBody)
             break;
         case 2:
             hero = startSquare3;  // Hero Start
             endSquare = endSquare3;  // Exit of Maze
             wallBody = wallBody3;
-            console.log("1b","start", hero, "end", endSquare, "wall", wallBody)
             break;
         case 3:
             hero = startSquare1;  // Hero Start
             endSquare = endSquare1b;  // Exit of Maze
             wallBody = wallBody1;
-            console.log("1b","start", hero, "end", endSquare, "wall", wallBody)
             break;
         case 4:
             hero = startSquare2;  // Hero Start
             endSquare = endSquare2b;  // Exit of Maze
             wallBody = wallBody2;
-            console.log("2b","start", hero, "end", endSquare, "wall", wallBody)
             break;
         case 5:
             hero = startSquare3;  // Hero Start
             endSquare = endSquare3b;  // Exit of Maze
             wallBody = wallBody3;
-            console.log("2b","start", hero, "end", endSquare, "wall", wallBody)
             break;
         default:
             Swal.fire('sorry no more levels, Play Again?')
