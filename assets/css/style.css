@@ -54,7 +54,7 @@ body {
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -68,6 +68,8 @@ body {
     grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
     grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
     background-color: var(--gameBoard);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .hero {
@@ -102,15 +104,92 @@ i {
 
 .right {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    width: 25%;
+    width: 50%;
+}
+
+.sub-title {
+    margin-right: 30px;
 }
 
 .scoreBox{
     height: 30px;
     width: 50%;
+    max-width: 200px;
     text-align: center;
     line-height: 30px;
     border: .25vmin solid var(--border);
+}
+
+.mobileOnly{
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+
+    .mobileOnly {
+        display: inline-block;
+        width: 100vw;
+    }
+
+    .square-butt {
+        height: 60px;
+        width: 60px;
+        margin: 8px;
+        border-radius: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .mob-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .right {
+        margin-top: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    h1 {
+        font-size: 30px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 10px;
+    }
+
+    .right {
+        margin-top: 10px;
+    }
+
+    .scoreBox{
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .end i {
+        font-size: 60%;
+    }
+
+    .end {
+        padding-top: 0%;
+        padding-bottom: 0%;
+        line-height: 10px;
+    }
+
 }
