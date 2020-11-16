@@ -5,6 +5,7 @@
     padding: 0px;
     font-family: 'Comic Neue', cursive;
     color: var(--text);
+    touch-action: manipulation;
 }
 
 p {
