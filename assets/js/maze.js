@@ -322,9 +322,6 @@ if (window.screen.width >= 992){
             })
     }
 
-
-    
-
 //---------- Draw Functions ----------//
 
 function draw(){
@@ -454,54 +451,6 @@ function win(){
         }
     })
 }
-
-if (window.screen.width >= 992){
-    Swal.fire({
-        title: 'How to play',
-        html: 'Navigate through the maze to the exit  ' +
-        '<i class="fas fa-door-open"></i>' +
-        '<br></br>' +
-        '<img src="assets/img/keys.gif" alt="keys gif"></img>' +
-        '<br></br>' +
-        'Using either the arrow keys, number pad or WASD keys.',
-        confirmButtonText: `Lets Play`,
-        confirmButtonColor: '#3085d6',
-        width: 600,
-        padding: '3em',
-        background: '#fff',
-        backdrop: `
-            rgba(0,0,123,0.5)
-        `
-        }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            draw() // Draw Game board
-        }
-        })
-    } else {
-        Swal.fire({
-            title: 'How to play',
-            html: 'Navigate through the maze to the exit  ' +
-            '<i class="fas fa-door-open"></i>' +
-            '<br></br>' + 
-            '<img src="assets/img/arrows.png" alt="arrows"></img>' +
-            '<br></br>' +
-            'Using the arrow keys buttons.',
-            confirmButtonText: `Lets Play`,
-            confirmButtonColor: '#3085d6',
-            width: 300,
-            padding: '2em',
-            background: '#fff',
-            backdrop: `
-                rgba(0,0,123,0.5)
-            `
-            }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                draw() // Draw Game board
-            }
-            })
-    }
 
 function reStart(){
     score = 1000
