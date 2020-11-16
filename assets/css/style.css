@@ -5,6 +5,9 @@
     padding: 0px;
     font-family: 'Comic Neue', cursive;
     color: var(--text);
+}
+
+body {
     touch-action: manipulation;
 }
 
