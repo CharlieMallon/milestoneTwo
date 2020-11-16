@@ -379,6 +379,7 @@ let potHero = { x:hero.x, y:hero.y }
 
 function moveHero(){
     direction()
+    scoreCalc()
     legal()
     draw(gameBoard)
     checkWin()
@@ -466,9 +467,9 @@ function reStart(){
 let score = 1000
 const scoreFactor = 5
 
-window.addEventListener('keydown', function() {
+function scoreCalc (){
     score = score - scoreFactor // minuses the scoreFactor every move
-});
+};
 
 function displayTheScore (){
     document.getElementById('score').innerHTML = score; // puts the score on the front page
