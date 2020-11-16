@@ -1,28 +1,14 @@
+/* Global css */
+
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Comic Neue', cursive;
+    color: var(--text);
 }
-
-/* colours */
-
-:root {
-    --background: #ccc;
-    --gameBoard: #ccc;
-    --hero: rgb(111, 20, 202);
-    --border: rgb(50, 50, 50);
-    --wall: black;
-    --text: black;
-}
-
-/* Text & Body */
 
 p {
     line-height: 1px
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Comic Neue', cursive;
-    color: var(--text);
 }
 
 h1 {
@@ -37,26 +23,66 @@ h3 {
     font-size: 20px;
 }
 
-body {
-    height: 100vh;
-    width: 100vw;
+.title {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    font-family: 'Comic Neue', cursive;
-    background-color: var(--background);
-    color: var(--text);
+    margin: 5px;
 }
 
-/* Standard classes */
+.fas {
+    pointer-events: none;
+}
 
-.row {
+.square-butt {
+    height: 60px;
+    width: 60px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+.row-sm {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+.col-sm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.scoreBox {
+    height: 30px;
+    width: 50%;
+    max-width: 200px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 20px;
+    border: .25vmin solid var(--border);
+}
+
+.fa-door-open {
+    color: Green;
+    font-size: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+/* colours */
+
+:root {
+    --background: #ccc;
+    --gameBoard: #ccc;
+    --hero: rgb(111, 20, 202);
+    --border: rgb(50, 50, 50);
+    --wall: black;
+    --text: black;
 }
 
 /* Game & Game Board */
@@ -68,8 +94,7 @@ body {
     grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
     grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
     background-color: var(--gameBoard);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin: 5%;
 }
 
 .hero {
@@ -84,114 +109,73 @@ body {
 .end {
     border: .25vmin solid rgb(23, 173, 23);
     text-align: center;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    /* padding-top: 10%;
+    padding-bottom: 10%; */
 }
 
-i {
-    color: Green;
-    font-size: 150%;
-}
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
 
-/* Title / Score */
-
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.sub-title {
-    margin-right: 30px;
-}
-
-.scoreBox{
-    height: 30px;
-    width: 50%;
-    max-width: 200px;
-    text-align: center;
-    line-height: 30px;
-    border: .25vmin solid var(--border);
-}
-
-.mobileOnly{
-    display: none;
-}
-
-.fas {
-    pointer-events: none;
-}
-
-@media only screen and (max-width: 1024px) {
-
-    .mobileOnly {
-        display: inline-block;
-        width: 100vw;
-    }
-
-    .square-butt {
-        height: 60px;
-        width: 60px;
-        margin: 8px;
-        border-radius: 10px;
-    }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
 
 }
 
-@media only screen and (max-width: 700px) {
-    .mob-col {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .row-md {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
 
-    .right {
-        margin-top: 40px;
+    .title,
+    .score {
+        margin-top: 30px;
+        width: 50%;
     }
 
+    #gameBoard {
+        margin: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
-@media only screen and (max-width: 500px) {
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
 
-    h1 {
-        font-size: 30px;
-    }
-    
-    h2 {
-        font-size: 20px;
-    }
-    
-    h3 {
-        font-size: 10px;
+    .mobileOnly{
+        display: none;
     }
 
-    .right {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .fa-door-open {
+        font-size: 150%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    .title,
+    .score {
         margin-top: 10px;
+        width: 50%;
     }
 
-    .scoreBox{
-        height: 20px;
-        line-height: 20px;
+    #gameBoard {
+        margin: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
+}
 
-    .end i {
-        font-size: 60%;
-    }
-
-    .end {
-        padding-top: 0%;
-        padding-bottom: 0%;
-        line-height: 10px;
-    }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
 
 }
