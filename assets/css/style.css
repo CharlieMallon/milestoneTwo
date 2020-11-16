@@ -8,7 +8,7 @@
 }
 
 body {
-    touch-action: manipulation;
+    touch-action: none;
 }
 
 p {

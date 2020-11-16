@@ -273,6 +273,12 @@ for (let i=0; i < squareButt.length; i++){
     })
 }
 
+//----------Double tap----------//
+
+// window.addEventListener('touchend', function(e) {
+//     e.preventDefault();
+// })
+
 //---------- Start up code ----------//
 
 //  Start Modal
