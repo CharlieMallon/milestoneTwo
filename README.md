@@ -91,7 +91,7 @@ I have split the features into Beta, Issue 1 & Issue 2.  The project is currentl
 *   #### Durning testing
     -   The hero continues to walk when and arrow key is followed by any other key. solution - default case to the switch.
     -   The hero moves two steps not one when it goes through animation frames. - this issue is to do with the refresh rate of the animation loop - removed the animation loop so it is now a user driven response.
-    -   On the iPhone a double tap of the buttons zooms in on that section of the page.
+    -   On the iPhone a double tap of the buttons zooms in on that section of the page. - considered using JS - seemed over complicated.  Found an article about [touch-action](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action#manipulation) that introduced me to touch actions and how to stop them happening.
 
 ## Deployment
 
