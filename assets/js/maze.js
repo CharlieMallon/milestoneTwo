@@ -287,6 +287,7 @@ if (window.screen.width >= 992){
         'Using either the arrow keys, number pad or WASD keys.',
         confirmButtonText: `Lets Play`,
         confirmButtonColor: '#3085d6',
+        allowOutsideClick: false,
         width: 600,
         padding: '3em',
         background: '#fff',
@@ -310,6 +311,7 @@ if (window.screen.width >= 992){
             'Using the arrow keys buttons.',
             confirmButtonText: `Lets Play`,
             confirmButtonColor: '#3085d6',
+            allowOutsideClick: false,
             background: '#fff',
             backdrop: `
                 rgba(0,0,123,0.5)
@@ -430,11 +432,12 @@ function win(){
         title: 'YAY! You won!',
         text: "You Scored " + score,
         showDenyButton: true,
-        showCancelButton: true,
+        showCancelButton: false,
         confirmButtonColor: '#3085d6',
         denyButtonColor: 'rgb(23, 173, 23)',
         confirmButtonText: `Restart?`,
         denyButtonText: `Next Level`,
+        allowOutsideClick: false,
         background: '#fff',
         backdrop: `
             rgba(0,0,123,0.5)
