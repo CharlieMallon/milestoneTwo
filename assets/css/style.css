@@ -64,7 +64,6 @@ h3 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 5%;
 }
 
 .center {
@@ -75,15 +74,8 @@ h3 {
 
 .text-center {
     text-align: center;
+    padding-bottom: 15px;
 }
-
-/* .hidden{
-    display: none;
-}
-
-.show {
-    display: inline;
-} */
 
 /* maze game page */
 
@@ -168,7 +160,15 @@ h3 {
     padding: 0 5% 3%;
 }
 
-.hide-on-mob{
+.back {
+    padding-right: 5%;
+}
+
+.not-tab{
+    display: inline;
+}
+
+.hidden-text {
     display: none;
 }
 
@@ -186,6 +186,7 @@ h3 {
     align-items: center;
     padding: 3% 5%;
     max-width: 500px;
+    height: 100%;
 }
 
 .form-title {
@@ -231,6 +232,7 @@ h3 {
 .text-box {
     width: 100%;
     padding: 5px;
+    border: 1px solid var(--border);
 }
 
 .name {
@@ -278,6 +280,19 @@ h3 {
         height: 300px;
         width: 300px;
     }
+
+    .about{
+        padding: 0 5%;
+    }
+
+    .not-tab{
+        display: none;
+    }
+
+    .hidden-text {
+        display: inline;
+    }
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -296,6 +311,7 @@ h3 {
         font-size: 150%;
     }
 
+    .desktop,
     .half-width,
     .score {
         margin-top: 10px;
@@ -306,6 +322,25 @@ h3 {
         margin: 0px;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .about{
+        padding: 0px;
+    }
+
+    .contact {
+        padding: 0px;
+    }
+
+    .desktop-half{
+        max-width: 600px;
+    }
+
+    .developer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
     }
 
 }
