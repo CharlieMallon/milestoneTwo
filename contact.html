@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fav Icon-->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favIcon.png">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/560ce606e6.js" crossorigin="anonymous"></script>
+    <!--Sweet Alert 2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!--My Style Sheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Maze Game</title>
+</head>
+<body>
+    <div class="col-sm row-md">
+        <div class="title">
+            <h1>About the Developer</h1>
+        </div>
+    </div>
+    <!-- About -->
+    <div class="about">
+        <h2 class="name title">Charlie Mallon</h2>
+        <div class="col-sm row-md center">
+            <img src="assets/img/myPhoto.png" alt="Photo of Charlie" class="rnd-img">
+            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique unde nam ex doloremque, 
+                quaerat aliquam tenetur enim eveniet error molestias? Error consectetur, fugiat enim ut 
+                adipisci saepe eum impedit voluptatum? 
+            </p>
+        </div>
+    </div>
+    <!-- github -->
+    <a href="https://github.com/CharlieMallon" target="_blank" class="right">View My GitHub</a>
+    <!-- contact -->
+    <div class="contact">
+        <h3 class="title form-title">Found a bug? Want to get in touch?</h3>
+        <form class="form" onsubmit="return sendMail(this);">
+
+            <div class="row-sm form-section left">
+                <div class="row-sm input-label">
+                    <label for="name">Name</label>
+                </div>
+            </div>
+            <div class="row-sm form-section short center">
+                <div class="input-full">
+                    <input type="text" name="name" id="fullName" placeholder="Full Name" class="text-box" required>
+                </div>
+            </div>
+            <div class="row-sm form-section left">
+                <div class="row-sm input-label">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row-sm form-section short center">
+                <div class="input-full">
+                    <input type="email" name="email" id="emailAddress" placeholder="Email" class="text-box" required>
+                </div>
+            </div>
+            <div class="row-sm form-section left">
+                <div class="row-sm input-label">
+                    <label for="email">Message</label>
+                </div>
+            </div>
+            <div class="row-sm form-section tall center">
+                <div class="input-full">
+                    <textarea name="subject" id="subject" rows="4" class="text-box"></textarea>
+                </div>
+            </div>
+            <div class="row-sm center short">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </div>
+    <div class="right"> 
+        <a href="index.html">Back to the Game</a>
+    </div>
+</body>
+<!-- Json script tag -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<!-- email service -->
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+    emailjs.init("user_8bAv4RpyCxxhdDuZ02hoe");
+})();
+</script>
+<!-- my script tags -->
+<script src="assets/js/contact.js" type="text/javascript"></script>
+
+</html>

@@ -5,48 +5,43 @@
     padding: 0px;
     font-family: 'Comic Neue', cursive;
     color: var(--text);
+    box-sizing: border-box;
 }
 
 body {
     touch-action: none;
 }
 
-p {
-    line-height: 1px
-}
-
 h1 {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 18px;
 }
+
+/* Colours */
+
+:root {
+    --background: #ccc;
+    --gameBoard: #ccc;
+    --hero: rgb(111, 20, 202);
+    --border: rgb(50, 50, 50);
+    --wall: black;
+    --text: black;
+}
+
+/* standard classes */
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px;
-}
-
-.fas {
-    pointer-events: none;
-}
-
-.square-butt {
-    height: 60px;
-    width: 60px;
-    margin: 8px;
-    border-radius: 10px;
-}
-
-.square-butt i {
-    font-size: 150%;
 }
 
 .row-sm {
@@ -65,6 +60,25 @@ h3 {
     width: 100%;
 }
 
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* maze game page */
+
 .scoreBox {
     height: 30px;
     width: 50%;
@@ -80,20 +94,19 @@ h3 {
     font-size: 70%;
 }
 
-.fa-door-open .end {
-    margin-top: 10%;
-    margin-bottom: 10%;
+.fas {
+    pointer-events: none;
 }
 
-/* colours */
+.square-butt {
+    height: 60px;
+    width: 60px;
+    margin: 8px;
+    border-radius: 10px;
+}
 
-:root {
-    --background: #ccc;
-    --gameBoard: #ccc;
-    --hero: rgb(111, 20, 202);
-    --border: rgb(50, 50, 50);
-    --wall: black;
-    --text: black;
+.square-butt i {
+    font-size: 150%;
 }
 
 /* Game & Game Board */
@@ -129,6 +142,89 @@ h3 {
     text-align: center;
 }
 
+.fa-door-open .end {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+/* Contact page */
+
+.rnd-img {
+    height: 160px;
+    width: 160px;
+    border-radius: 100%;
+    padding: 5%;
+}
+
+.about{
+    padding: 0 5% 3%;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 5%;
+    max-width: 500px;
+}
+
+.form-title {
+    padding-top: 20px;
+}
+
+.tall {
+    height: 80px;
+}
+
+.short {
+    height: 40px;
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.input-half {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    height: 35px;
+}
+
+.input-label{
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20%;
+}
+
+.input-full {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.text-box {
+    width: 100%;
+    padding: 5px;
+}
+
+.name {
+    width: 100%;
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
 
@@ -156,7 +252,7 @@ h3 {
         width: 100%;
     }
 
-    .title,
+    .half-width,
     .score {
         margin-top: 30px;
         width: 50%;
@@ -183,7 +279,7 @@ h3 {
         font-size: 150%;
     }
 
-    .title,
+    .half-width,
     .score {
         margin-top: 10px;
         width: 50%;
