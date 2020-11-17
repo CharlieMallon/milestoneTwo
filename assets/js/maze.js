@@ -226,38 +226,34 @@
     ]
 
 //---------- Event Listeners ----------//
-let inputDirection = " "
 
-function whichDirection (input) {
+function whichDirection (input) {  // input is used as there are two types of input key & button
     switch (input){
-        case 'ArrowUp':
+        case 'ArrowUp':  // this is both the id of the button & the name of the arrow key
         case 'w':
         case '8':
-            inputDirection = "up"
-            break
+            return "up"
         case 'ArrowLeft':
         case '4':
         case 'a':
-            inputDirection = "left"
-            break
+            return "left"
         case 'ArrowRight':
         case '6':
         case 'd':
-            inputDirection = "right"
-            break
+            return "right"
         case 'ArrowDown':
         case '2':
         case 's':
-            inputDirection = "down"
-            break
+            return "down"
         default:
-            inputDirection = "none"
+            return "none"
     }
 }
 
-window.addEventListener('keydown', e=> {
-    whichDirection(e.key);
-    moveHero();
+window.addEventListener('keydown', e=> {  // event (e) happened - key pressed
+    const actualDirection = whichDirection(e.key); // e.key = what key pressed - what is the intent of this
+    moveHero(actualDirection);
+    changeScore();
 })
 
 
@@ -268,8 +264,9 @@ const squareButt = document.getElementsByClassName( "square-butt" )
 for (let i=0; i < squareButt.length; i++){
     squareButt[i].addEventListener("click", function(e) {
         const direction = e.target.id
-        whichDirection(direction);
-        moveHero();
+        const actualDirection = whichDirection(direction);
+        moveHero(actualDirection);
+        changeScore();
     })
 }
 
@@ -379,15 +376,14 @@ function drawWall(gameBoard){
 let potHero = { x:hero.x, y:hero.y }
 
 
-function moveHero(){
-    direction()
-    scoreCalc()
+function moveHero(moveDirection){
+    direction(moveDirection)
     legal()
     draw(gameBoard)
     checkWin()
 }
 
-function direction(){
+function direction(inputDirection){
     if (inputDirection == "up"){
         potHero = {x:hero.x, y:hero.y - 1}
     } else if (inputDirection == "down"){
@@ -470,7 +466,7 @@ function reStart(){
 let score = 1000
 const scoreFactor = 5
 
-function scoreCalc (){
+function changeScore () {
     score = score - scoreFactor // minuses the scoreFactor every move
 };
 
