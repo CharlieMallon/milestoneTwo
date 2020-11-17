@@ -19,11 +19,28 @@ function sendMail(){
     })
     .then (
         function(){
-            document.getElementById("confirm-text").classList.remove('hidden-text-all');
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Your message has been sent! Thank You for getting in touch.',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                    location.reload();
+                    }
+                });
         },
         function(){
-            document.getElementById("error-text").classList.remove('hidden-text-all');
-    });
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong! Your message was not sent!',
+            }).then((result) => {
+                    if (result.isConfirmed) {
+                    location.reload();
+                    }
+                });
+        }
+    );
     return false;
 }
 
