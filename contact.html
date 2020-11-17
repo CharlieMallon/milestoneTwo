@@ -81,7 +81,11 @@
                         </div>
                     </div>
                     <div class="row-sm center short">
-                        <button type="submit" id="send">Send Message</button>
+                        <button type="submit" id="send" class="submit-button">Send Message</button>
+                    </div>
+                    <div>
+                        <p id="confirm-text" class="hidden-text-all sucess">Message Sent</p>
+                        <p id="error-text" class="hidden-text-all error">Error: Message Not Sent</p>
                     </div>
                 </form>
             </div>
@@ -95,7 +99,6 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 <script type="text/javascript">
     (function() {
-        // https://dashboard.emailjs.com/admin/integration
         emailjs.init('user_8bAv4RpyCxxhdDuZ02hoe');
     })();
 </script>

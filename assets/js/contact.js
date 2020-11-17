@@ -17,12 +17,12 @@ function sendMail(){
         "from_name": document.getElementById("fullName").value,
         "from_email": document.getElementById("emailAddress").value,
     })
-    .then(
-        function(response){
-            console.log("SUCCESS", response);
+    .then (
+        function(){
+            document.getElementById("confirm-text").classList.remove('hidden-text-all');
         },
-        function(error){
-            console.log("error", error);
+        function(){
+            document.getElementById("error-text").classList.remove('hidden-text-all');
     });
     return false;
 }

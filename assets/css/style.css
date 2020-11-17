@@ -31,6 +31,7 @@ h3 {
     --gameBoard: #ccc;
     --hero: rgb(111, 20, 202);
     --border: rgb(50, 50, 50);
+    --end: rgb(23, 173, 23);
     --wall: black;
     --text: black;
 }
@@ -90,7 +91,7 @@ h3 {
 }
 
 .fa-door-open {
-    color: Green;
+    color: var(--end);
     font-size: 70%;
 }
 
@@ -138,7 +139,7 @@ h3 {
 }
 
 .end {
-    border: .25vmin solid rgb(23, 173, 23);
+    border: .25vmin solid var(--end);
     text-align: center;
 }
 
@@ -237,6 +238,22 @@ h3 {
 
 .name {
     width: 100%;
+}
+
+.submit-button{
+    width: 100px;
+}
+
+.hidden-text-all {
+    display: none;
+}
+
+.sucess{
+    color: var(--end);
+}
+
+.error{
+    color: red;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
