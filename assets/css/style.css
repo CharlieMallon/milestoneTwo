@@ -77,6 +77,14 @@ h3 {
     text-align: center;
 }
 
+/* .hidden{
+    display: none;
+}
+
+.show {
+    display: inline;
+} */
+
 /* maze game page */
 
 .scoreBox {
@@ -158,6 +166,10 @@ h3 {
 
 .about{
     padding: 0 5% 3%;
+}
+
+.hide-on-mob{
+    display: none;
 }
 
 .contact {
@@ -260,6 +272,11 @@ h3 {
 
     .fa-door-open {
         font-size: 125%;
+    }
+
+    .rnd-img {
+        height: 300px;
+        width: 300px;
     }
 }
 
