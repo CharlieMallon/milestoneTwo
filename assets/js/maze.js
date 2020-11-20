@@ -1,5 +1,7 @@
 //---------- Maze boards ----------//
 
+//
+
     // Maze 1
     const startSquare1 = { x:5, y:2 }  // Hero Start
     const endSquare1 = { x:15, y:21 }  // Exit of Maze
@@ -256,7 +258,6 @@ window.addEventListener('keydown', e=> {  // event (e) happened - key pressed
     changeScore();
 })
 
-
 //-----------Button Clicks----------//
 
 const squareButt = document.getElementsByClassName( "square-butt" )
@@ -401,11 +402,15 @@ function legal(){
     const legal = wallBody.map(wall => {  // for each of the co-ordinates in wallBody (bottom of page) map the result of this loop
         for (let i=0; i < wall.h; i++) {  // if the wall height is less than i then increase i by one
             for (let j=0; j < wall.w; j++) {    // if the wall width is less than j then increase j by one
-            const wallSegment = {x: wall.x + j, y: wall.y + i}  // set the wallSegments to X co-ordinate plus j (width) and Y co-ordinate plus i (height) this makes sure that each of the 'walls' in the row are checked
+            // set the wallSegments to X co-ordinate plus j (width) and Y 
+            // co-ordinate plus i (height) this makes sure that each of 
+            // the 'walls' in the row are checked
+                const wallSegment = {x: wall.x + j, y: wall.y + i}  
             if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {  // if Potential Hero = a Wall segment then return False
                 return false
             }
         }}
+
         return true  //if you get here return True
     })
     if (!legal.includes(false)){  // if the map of Wall Body doesn't have a false then move Hero Body to Potential Hero Space
