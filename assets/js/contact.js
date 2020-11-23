@@ -1,16 +1,18 @@
-// //----------About the Developer----------//
+//----------About the Developer----------//
 
+// When readMore is clicked, add the Read Less text and remove the hidden-text class
 function showMore(){
     document.getElementById("readMore").innerHTML = '<a href="javascript:showLess()" id="readMore">Read Less</a>'
     document.getElementById("more").classList.remove('hidden-text')
 }
 
+// When readLess is clicked, add the Read More text and add the hidden-text class
 function showLess(){
     document.getElementById("readMore").innerHTML = '<a href="javascript:showMore()" class="not-tab" id="readMore">Read More</a>'
     document.getElementById("more").classList.add('hidden-text')
 }
 
-// // contact
+// Send email using js, when sent or failed to send gives a modal saying so and re-loads the page
 function sendMail(){
     emailjs.send("iCloud-Charlie","template_maze", {
         "message": document.getElementById("subject").value,
@@ -44,6 +46,7 @@ function sendMail(){
     return false;
 }
 
+// Adds the event listener to the send button
 window.onload = function() {
     document.getElementById('send').addEventListener('submit', function(event) {
         event.preventDefault();
