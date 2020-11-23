@@ -1,6 +1,7 @@
 //---------- Maze boards ----------//
 
-//
+// Maze boards are constructed using css grid.  The x and y co-ordinates denote the square
+// on the board that the div starts on. The w is the width and the h is the height, in squares.
 
     // Maze 1
     const startSquare1 = { x:5, y:2 }  // Hero Start
@@ -9,10 +10,10 @@
     const wallBody1 = [
         // x + Y = start ref, W = width, H = height
         // Edge of Game Board
-        { x:1, y:1, w:1, h:22},
-        { x:1, y:1, w:22, h:1},
-        { x:22, y:1, w:1, h:21},
-        { x:1, y:22, w:22, h:1},
+        { x:1, y:1, w:1, h:22 },
+        { x:1, y:1, w:22, h:1 },
+        { x:22, y:1, w:1, h:21 },
+        { x:1, y:22, w:22, h:1 },
         // Maze internals
         { x:6, y:2, w:1, h:1, },
         { x:12, y:2, w:1, h:3, },
@@ -76,10 +77,10 @@
     const wallBody2 = [
         // x + Y = start ref, W = width, H = height
         // Edge of Game Board
-        { x:1, y:1, w:1, h:22},
-        { x:1, y:1, w:22, h:1},
-        { x:22, y:1, w:1, h:21},
-        { x:1, y:22, w:22, h:1},
+        { x:1, y:1, w:1, h:22 },
+        { x:1, y:1, w:22, h:1 },
+        { x:22, y:1, w:1, h:21 },
+        { x:1, y:22, w:22, h:1 },
         // Maze internals
         { x:3, y:2, w:1, h:1, }, 
         { x:5, y:2, w:3, h:1, }, 
@@ -153,10 +154,10 @@
     const wallBody3 = [
         // x + Y = start ref, W = width, H = height
         // Edge of Game Board
-        { x:1, y:1, w:1, h:22},
-        { x:1, y:1, w:22, h:1},
-        { x:22, y:1, w:1, h:21},
-        { x:1, y:22, w:22, h:1},
+        { x:1, y:1, w:1, h:22 },
+        { x:1, y:1, w:22, h:1 },
+        { x:22, y:1, w:1, h:21 },
+        { x:1, y:22, w:22, h:1 },
         // Maze internals
         { x:2, y:2, w:1, h:4, }, 
         { x:9, y:2, w:3, h:1, }, 
@@ -227,43 +228,15 @@
         { x:10, y:21, w:1, h:1, },
     ]
 
-//---------- Event Listeners ----------//
-
-function whichDirection (input) {  // input is used as there are two types of input key & button
-    switch (input){
-        case 'ArrowUp':  // this is both the id of the button & the name of the arrow key
-        case 'w':
-        case '8':
-            return "up"
-        case 'ArrowLeft':
-        case '4':
-        case 'a':
-            return "left"
-        case 'ArrowRight':
-        case '6':
-        case 'd':
-            return "right"
-        case 'ArrowDown':
-        case '2':
-        case 's':
-            return "down"
-        default:
-            return "none"
-    }
-}
-
-window.addEventListener('keydown', e=> {  // event (e) happened - key pressed
-    const actualDirection = whichDirection(e.key); // e.key = what key pressed - what is the intent of this
-    moveHero(actualDirection);
-    changeScore();
-})
-
 //-----------Button Clicks----------//
 
-const squareButt = document.getElementsByClassName( "square-butt" )
+// adds an event listener to all the square buttons, when a button is clicked or tapped
+// it takes the id of that button and feeds it into the whichDirection function, then moves
+// the hero in the direction indicated (if possible) and changes the score.
+const squareButt = document.getElementsByClassName('square-butt')
 
 for (let i=0; i < squareButt.length; i++){
-    squareButt[i].addEventListener("click", function(e) {
+    squareButt[i].addEventListener('click', function(e) {
         const direction = e.target.id
         const actualDirection = whichDirection(direction);
         moveHero(actualDirection);
@@ -271,9 +244,45 @@ for (let i=0; i < squareButt.length; i++){
     })
 }
 
+//---------- Event Listeners ----------//
+
+// Listens for a key to be pressed, and interprets the direction using the 
+// whichDirection function, then moves the hero in the direction indicated 
+// (if possible) and changes the score.
+window.addEventListener('keydown', e=> {  
+    const actualDirection = whichDirection(e.key);
+    moveHero(actualDirection);
+    changeScore();
+})
+
+// This function takes the input from the event listeners and interprets what direction the
+// user wants to go. The output will be 'up', 'down', 'left', 'right' or 'none'.
+function whichDirection (input) {  
+    switch (input){
+        case 'ArrowUp':  // this is both the id of the button & the name of the arrow key
+        case 'w':
+        case '8':
+            return 'up'
+        case 'ArrowLeft':
+        case '4':
+        case 'a':
+            return 'left'
+        case 'ArrowRight':
+        case '6':
+        case 'd':
+            return 'right'
+        case 'ArrowDown':
+        case '2':
+        case 's':
+            return 'down'
+        default:
+            return 'none'
+    }
+}
+
 //---------- Start up code ----------//
 
-//  Start Modal
+//  Start Modal.  Checks for screen size and gives a different modal for desktop size.
 if (window.screen.width >= 992){
     Swal.fire({
         title: 'How to play',
@@ -293,7 +302,6 @@ if (window.screen.width >= 992){
             rgba(0,0,123,0.5)
         `
         }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
             draw() // Draw Game board
         }
@@ -315,7 +323,6 @@ if (window.screen.width >= 992){
                 rgba(0,0,123,0.5)
             `
             }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 draw() // Draw Game board
             }
@@ -324,6 +331,7 @@ if (window.screen.width >= 992){
 
 //---------- Draw Functions ----------//
 
+// First Clears the game board then draws the hero, walls, end square and finally display the score
 function draw(){
     gameBoard.innerHTML = ''
     drawHero(gameBoard)
@@ -334,33 +342,39 @@ function draw(){
 
 let hero = startSquare1  // Hero Start
 let endSquare = endSquare1  // Exit of Maze
-let wallBody = wallBody1
+let wallBody = wallBody1 // Walls of Maze
 
+// Creates an element with the class of hero at the x & y co-ordinates of the hero constant
+// and adds it to the game board
 function drawHero(gameBoard){
     const heroElement = document.createElement('div')
-// gives the div styling to make the Hero
+
     heroElement.style.gridRow = hero.y
     heroElement.style.gridColumn = hero.x
     heroElement.classList.add('hero')
-// adds the Hero to the board
+
     gameBoard.appendChild(heroElement)
 }
 
+// Creates an element with the class of end at the x & y co-ordinates of the endSquare constant
+// and adds it to the game board
 function drawEnd(gameBoard) {
     const end = endSquare
     const endElement = document.createElement('div')
-// gives the div styling to make the Hero
+
     endElement.innerHTML = '<i class="fas fa-door-open"></i>'
     endElement.style.gridRowStart = end.y
     endElement.style.gridColumnStart = end.x
     endElement.classList.add('end')
-// adds the Hero to the board
+
     gameBoard.appendChild(endElement)
 }
 
+// creates the elements for the class of wall, it loops through each of the x & y co-ordinates
+// of the wallBody constant (at top of document) and adds it to the game board
 function drawWall(gameBoard){
-    wallBody.forEach(wall => {  // for each co-ordinates in wallBody do this loop
-    const wallElement = document.createElement('div')  // every time wallElement is called make a div
+    wallBody.forEach(wall => {  
+    const wallElement = document.createElement('div')
             // gives the div styling to make the walls
     wallElement.style.gridRowStart = wall.y // horizontal start value 
     wallElement.style.gridRowEnd = `span ${wall.h}` //  Tells the wall how high to be
@@ -373,10 +387,10 @@ function drawWall(gameBoard){
 
 //---------- Move Functions ----------//
 
-
 let potHero = { x:hero.x, y:hero.y }
 
-
+// Asks which direction the user wants to go, checks if it is legal, 
+// draw the board & then check if the game has been won
 function moveHero(moveDirection){
     direction(moveDirection)
     legal()
@@ -384,54 +398,65 @@ function moveHero(moveDirection){
     checkWin()
 }
 
+// Takes the output of the function whichDirection & works out where the user
+// wants to move the hero to, stores the value in the variable potHero
 function direction(inputDirection){
-    if (inputDirection == "up"){
+    if (inputDirection == 'up'){
         potHero = {x:hero.x, y:hero.y - 1}
-    } else if (inputDirection == "down"){
+    } else if (inputDirection == 'down'){
         potHero = {x:hero.x, y:hero.y + 1}
-    } else if (inputDirection == "left"){
+    } else if (inputDirection == 'left'){
         potHero = {x:hero.x - 1 , y:hero.y}
-    } else if (inputDirection == "right"){
+    } else if (inputDirection == 'right'){
         potHero = {x:hero.x + 1 , y:hero.y}
     } else {
         potHero = hero
     }
 } 
 
+// Checks if the move is legal, compares the potential hero position (potHero) with
+// the position of each wall segment.  If the const legal doesn't have a false then
+// updates the hero constant to potHero co-ordinates.
 function legal(){
-    const legal = wallBody.map(wall => {  // for each of the co-ordinates in wallBody (bottom of page) map the result of this loop
-        for (let i=0; i < wall.h; i++) {  // if the wall height is less than i then increase i by one
-            for (let j=0; j < wall.w; j++) {    // if the wall width is less than j then increase j by one
-            // set the wallSegments to X co-ordinate plus j (width) and Y 
-            // co-ordinate plus i (height) this makes sure that each of 
-            // the 'walls' in the row are checked
-                const wallSegment = {x: wall.x + j, y: wall.y + i}  
-            if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {  // if Potential Hero = a Wall segment then return False
+    // for each of the co-ordinates in wallBody (top of page) map the result of this loop
+    const legal = wallBody.map(wall => {  
+        // if the wall height is less than i then increase i by one
+        for (let i=0; i < wall.h; i++) {  
+            // if the wall width is less than j then increase j by one
+            for (let j=0; j < wall.w; j++) {    
+            // set the wallSegment to X co-ordinate plus j (width) and Y co-ordinate
+            //plus i (height) this makes sure that each of the 'walls' in the row are checked
+                const wallSegment = {x: wall.x + j, y: wall.y + i}
+            // if Potential Hero = a Wall segment then return False
+            if ((wallSegment.x == potHero.x) && (wallSegment.y == potHero.y)) {
                 return false
             }
         }}
-
         return true  //if you get here return True
     })
-    if (!legal.includes(false)){  // if the map of Wall Body doesn't have a false then move Hero Body to Potential Hero Space
+
+    // if the map of Wall Body doesn't have a false then move Hero Body to Potential Hero Space
+    if (!legal.includes(false)){  
         hero = potHero
     }
 }
 
-//Check if we have got to the end
+//Check if the hero has got to the endSquare
 function checkWin() {
     const end = { x:endSquare.x, y:endSquare.y }  // get End Square
-    if ((hero.x == end.x) && (hero.y == end.y)){  // compare x and y
+    if ((hero.x == end.x) && (hero.y == end.y)){  // compare the x and y co-ordinates
         win()
     }
 }
 
 //---------- Win Functions ----------//
 
+// When you get to the end square the win Modal pops up.
+// Gives option to re-start or move to next level
 function win(){
     Swal.fire({
         title: 'YAY! You won!',
-        text: "You Scored " + score,
+        text: 'You Scored ' + score,
         showDenyButton: true,
         showCancelButton: false,
         confirmButtonColor: '#3085d6',
@@ -457,6 +482,7 @@ function win(){
     })
 }
 
+// Re-sets all the values to start values and then re-draws
 function reStart(){
     score = 1000
     hero = startSquare1
@@ -471,45 +497,50 @@ function reStart(){
 let score = 1000
 const scoreFactor = 5
 
+// minuses the scoreFactor every move that is made
 function changeScore () {
-    score = score - scoreFactor // minuses the scoreFactor every move
+    score = score - scoreFactor 
 };
 
+// displays the score on the site
 function displayTheScore (){
-    document.getElementById('score').innerHTML = score; // puts the score on the front page
+    document.getElementById('score').innerHTML = score;
 }
 
 //---------- level Functions ----------//
 
 let level = 0
 
+// sets the start, end and wall map for each level. Each time
+// this function is called it will add one to the level and up
+// the score by 1000.  Then draws the board.
 function nextLevel(){
     score = score + 1000
     level = level + 1
     switch (level) {
         case 1:
-            hero = startSquare2;  // Hero Start
-            endSquare = endSquare2;  // Exit of Maze
+            hero = startSquare2;
+            endSquare = endSquare2;
             wallBody = wallBody2;
             break;
         case 2:
-            hero = startSquare3;  // Hero Start
-            endSquare = endSquare3;  // Exit of Maze
+            hero = startSquare3;
+            endSquare = endSquare3;
             wallBody = wallBody3;
             break;
         case 3:
-            hero = startSquare1;  // Hero Start
-            endSquare = endSquare1b;  // Exit of Maze
+            hero = startSquare1;
+            endSquare = endSquare1b;
             wallBody = wallBody1;
             break;
         case 4:
-            hero = startSquare2;  // Hero Start
-            endSquare = endSquare2b;  // Exit of Maze
+            hero = startSquare2;
+            endSquare = endSquare2b;
             wallBody = wallBody2;
             break;
         case 5:
-            hero = startSquare3;  // Hero Start
-            endSquare = endSquare3b;  // Exit of Maze
+            hero = startSquare3;
+            endSquare = endSquare3b;
             wallBody = wallBody3;
             break;
         default:
