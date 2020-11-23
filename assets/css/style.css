@@ -10,6 +10,7 @@
 
 body {
     touch-action: none;
+    height: 100vh;
 }
 
 h1 {
@@ -68,6 +69,13 @@ h3 {
     padding-right: 5%;
 }
 
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -77,6 +85,10 @@ h3 {
 .text-center {
     text-align: center;
     padding-bottom: 15px;
+}
+
+.half{
+    width: 50%;
 }
 
 /* maze game page */

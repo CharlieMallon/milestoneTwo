@@ -550,3 +550,15 @@ function nextLevel(){
 
     draw()
 }
+
+// Show the buttons
+function showButtons(){
+    document.getElementById("show").innerHTML = '<a href="javascript:hideButtons()" id="show">Hide Buttons</a>'
+    document.getElementById("buttons").classList.remove('mobileOnly')
+}
+
+// hide the buttons
+function hideButtons(){
+    document.getElementById("show").innerHTML = '<a href="javascript:showButtons()" id="show">Show Buttons</a>'
+    document.getElementById("buttons").classList.add('mobileOnly')
+}
