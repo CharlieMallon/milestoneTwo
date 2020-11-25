@@ -10,7 +10,9 @@
 
 body {
     touch-action: none;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h1 {
@@ -136,7 +138,6 @@ h3 {
 }
 
 .game{
-    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,6 +160,10 @@ h3 {
 .fa-door-open .end {
     margin-top: 10%;
     margin-bottom: 10%;
+}
+
+.show-desk {
+    visibility: hidden;
 }
 
 /* Contact page */
@@ -337,6 +342,10 @@ h3 {
         margin: 0px;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .show-desk {
+        visibility: visible;
     }
 
     .about{
