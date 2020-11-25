@@ -561,6 +561,10 @@ function showButtons() {
 	document.getElementById('show').innerHTML =
 		'<a href="javascript:hideButtons()" id="show">Hide Buttons</a>';
 	document.getElementById('buttons').classList.remove('mobileOnly');
+	if (document.getElementById('gameBoard').offsetHeight > window.innerHeight*0.7){
+		document.getElementById('gameBoard').style.height = "70vmin";
+		document.getElementById('gameBoard').style.width = "70vmin";
+	}
 }
 
 // hide the buttons
@@ -568,4 +572,8 @@ function hideButtons() {
 	document.getElementById('show').innerHTML =
 		'<a href="javascript:showButtons()" id="show">Show Buttons</a>';
 	document.getElementById('buttons').classList.add('mobileOnly');
+	if (document.getElementById('gameBoard').style.height = "70vmin"){
+		document.getElementById('gameBoard').style.height = "90vmin";
+		document.getElementById('gameBoard').style.width = "90vmin";
+	}
 }
