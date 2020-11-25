@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Fav Icon-->
-    <link rel="shortcut icon" type="image/png" href="assets/img/favIcon.png">
-    <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&display=swap" rel="stylesheet">
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/560ce606e6.js" crossorigin="anonymous"></script>
-    <!--Sweet Alert 2-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <!--My Style Sheet-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Maze Game</title>
-</head>
-<body>
-    <div class="col-sm row-md">
-        <div class="title half-width">
-            <h1>Maze Game</h1>
-        </div>
-        <div class="row-sm score">
-            <h2>SCORE</h2>
-            <div class="scoreBox">
-                <h3 id = "score"></h3>
-            </div>
-        </div>
-    </div>
-    <div class="row-sm game">
-        <div id="gameBoard"></div>
-    </div>
-    <div class="mobileOnly" id="buttons">
-        <div class="row-sm">
-            <button type="button" class = "square-butt" id="ArrowUp"><i class="fas fa-arrow-up"></i></button>
-        </div>
-        <div class="row-sm">
-            <button type="button" class = "square-butt" id="ArrowLeft"><i class="fas fa-arrow-left"></i></button>
-            <button type="button" class = "square-butt" id="ArrowDown"><i class="fas fa-arrow-down"></i></button>
-            <button type="button" class = "square-butt" id="ArrowRight"><i class="fas fa-arrow-right"></i></button>
-        </div>
-    </div>
-    <div class="row-sm">
-        <div class="left half">
-            <a href="javascript:showButtons()" id="show">Show Buttons</a>
-        </div>
-        <div class="right half">
-            <a href="contact.html">About the Developer</a>
-        </div>
-    </div>
-</body>
-<script src="assets/js/maze.js" type="text/javascript"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--Fav Icon-->
+		<link rel="shortcut icon" type="image/png" href="assets/img/favIcon.png" />
+		<!--Google Fonts-->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&display=swap"
+			rel="stylesheet"
+		/>
+		<!--Font Awesome-->
+		<script src="https://kit.fontawesome.com/560ce606e6.js" crossorigin="anonymous"></script>
+		<!--Sweet Alert 2-->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		<!--My Style Sheet-->
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<title>Maze Game</title>
+	</head>
+	<body>
+		<div class="col-sm row-md">
+			<div class="title half-width">
+				<h1>Maze Game</h1>
+			</div>
+			<div class="row-sm score">
+				<h2>SCORE</h2>
+				<div class="scoreBox">
+					<h3 id="score"></h3>
+				</div>
+			</div>
+		</div>
+		<div class="row-sm game">
+			<div id="gameBoard"></div>
+		</div>
+		<div class="mobileOnly" id="buttons">
+			<div class="row-sm">
+				<button type="button" class="square-butt" id="ArrowUp">
+					<i class="fas fa-arrow-up"></i>
+				</button>
+			</div>
+			<div class="row-sm">
+				<button type="button" class="square-butt" id="ArrowLeft">
+					<i class="fas fa-arrow-left"></i>
+				</button>
+				<button type="button" class="square-butt" id="ArrowDown">
+					<i class="fas fa-arrow-down"></i>
+				</button>
+				<button type="button" class="square-butt" id="ArrowRight">
+					<i class="fas fa-arrow-right"></i>
+				</button>
+			</div>
+		</div>
+		<div class="row-sm">
+			<div class="left half">
+				<a href="javascript:showButtons()" id="show">Show Buttons</a>
+			</div>
+			<div class="right half">
+				<a href="contact.html">About the Developer</a>
+			</div>
+		</div>
+	</body>
+	<script src="assets/js/maze.js" type="text/javascript"></script>
 </html>

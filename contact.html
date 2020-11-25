@@ -1,105 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Fav Icon-->
-    <link rel="shortcut icon" type="image/png" href="assets/img/favIcon.png">
-    <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&display=swap" rel="stylesheet">
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/560ce606e6.js" crossorigin="anonymous"></script>
-    <!--Sweet Alert 2-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <!--My Style Sheet-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Maze Game</title>
-</head>
-<body>
-    <div class="row-sm">
-        <div class="title">
-            <h1>About the Developer</h1>
-        </div>
-    </div>
-    <!-- About the Developer -->
-    <div class="developer">
-        <!-- About -->
-        <div class="about desktop desktop-half">
-            <h2 class="name title">Charlie Mallon</h2>
-            <div class="col-sm row-md center">
-                <img src="assets/img/myPhoto.jpg" alt="Photo of Charlie" class="rnd-img">
-                <p class="text-center">Charlie is a full stack developer in training, 
-                    she produced this site as a graded JavaScript project for
-                    Code Institute course.  Although she is new to coding she is 
-                    passionate about getting it right. She has enjoyed JavaScript and loves making
-                    games from scratch.
-                    <span class="hidden-text" id="more"> If you have any feedback on 
-                        this project please complete the get in touch form. To find out 
-                        more about the projects she is currently working on pop over to GitHub.
-                    </span>
-                    <a href="javascript:showMore()" class="not-tab" id="readMore">Read More</a>
-                </p>
-            </div>
-            <div>
-                <!-- github -->
-                <a href="https://github.com/CharlieMallon" target="_blank" class="right">View My GitHub</a>
-            </div>
-        </div>
-        <!-- contact -->
-        <div class="contact desktop desktop-half">
-            <div class="row-sm">
-                <h3 class="title form-title">Found a bug? Want to get in touch?</h3>
-            </div>
-            <div class="row-sm">
-                <form class="form" onsubmit="return sendMail(this);">
-                    <div class="row-sm form-section left">
-                        <div class="row-sm input-label">
-                            <label for="name">Name</label>
-                        </div>
-                    </div>
-                    <div class="row-sm form-section short center">
-                        <div class="input-full">
-                            <input type="text" name="name" id="fullName" placeholder="Full Name" class="text-box" required>
-                        </div>
-                    </div>
-                    <div class="row-sm form-section left">
-                        <div class="row-sm input-label">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row-sm form-section short center">
-                        <div class="input-full">
-                            <input type="email" name="email" id="emailAddress" placeholder="Email" class="text-box" required>
-                        </div>
-                    </div>
-                    <div class="row-sm form-section left">
-                        <div class="row-sm input-label">
-                            <label for="email">Message</label>
-                        </div>
-                    </div>
-                    <div class="row-sm form-section tall center">
-                        <div class="input-full">
-                            <textarea name="subject" id="subject" rows="4" class="text-box"></textarea>
-                        </div>
-                    </div>
-                    <div class="row-sm center short">
-                        <button type="submit" id="send" class="submit-button">Send Message</button>
-                    </div>
-                </form>
-            </div>
-            <div class="row-sm right">
-                <a href="index.html">Back to the Game</a>
-            </div>
-        </div>
-    </div>
-</body>
-<!-- Email Script-->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function() {
-        emailjs.init('user_8bAv4RpyCxxhdDuZ02hoe');
-    })();
-</script>
-<!-- my script tags -->
-<script src="assets/js/contact.js" type="text/javascript"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--Fav Icon-->
+		<link rel="shortcut icon" type="image/png" href="assets/img/favIcon.png" />
+		<!--Google Fonts-->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&display=swap"
+			rel="stylesheet"
+		/>
+		<!--Font Awesome-->
+		<script src="https://kit.fontawesome.com/560ce606e6.js" crossorigin="anonymous"></script>
+		<!--Sweet Alert 2-->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		<!--My Style Sheet-->
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<title>Maze Game</title>
+	</head>
+	<body>
+		<div class="row-sm">
+			<div class="title">
+				<h1>About the Developer</h1>
+			</div>
+		</div>
+		<!-- About the Developer -->
+		<div class="developer">
+			<!-- About -->
+			<div class="about desktop desktop-half">
+				<h2 class="name title">Charlie Mallon</h2>
+				<div class="col-sm row-md center">
+					<img src="assets/img/myPhoto.jpg" alt="Photo of Charlie" class="rnd-img" />
+					<p class="text-center">
+						Charlie is a full stack developer in training, she produced this site as a
+						graded JavaScript project for Code Institute course. Although she is new to
+						coding she is passionate about getting it right. She has enjoyed JavaScript
+						and loves making games from scratch.
+						<span class="hidden-text" id="more">
+							If you have any feedback on this project please complete the get in
+							touch form. To find out more about the projects she is currently working
+							on pop over to GitHub.
+						</span>
+						<a href="javascript:showMore()" class="not-tab" id="readMore">Read More</a>
+					</p>
+				</div>
+				<div>
+					<!-- github -->
+					<a href="https://github.com/CharlieMallon" target="_blank" class="right"
+						>View My GitHub</a
+					>
+				</div>
+			</div>
+			<!-- contact -->
+			<div class="contact desktop desktop-half">
+				<div class="row-sm">
+					<h3 class="title form-title">Found a bug? Want to get in touch?</h3>
+				</div>
+				<div class="row-sm">
+					<form class="form" onsubmit="return sendMail(this);">
+						<div class="row-sm form-section left">
+							<div class="row-sm input-label">
+								<label for="name">Name</label>
+							</div>
+						</div>
+						<div class="row-sm form-section short center">
+							<div class="input-full">
+								<input
+									type="text"
+									name="name"
+									id="fullName"
+									placeholder="Full Name"
+									class="text-box"
+									required
+								/>
+							</div>
+						</div>
+						<div class="row-sm form-section left">
+							<div class="row-sm input-label">
+								<label for="email">Email</label>
+							</div>
+						</div>
+						<div class="row-sm form-section short center">
+							<div class="input-full">
+								<input
+									type="email"
+									name="email"
+									id="emailAddress"
+									placeholder="Email"
+									class="text-box"
+									required
+								/>
+							</div>
+						</div>
+						<div class="row-sm form-section left">
+							<div class="row-sm input-label">
+								<label for="email">Message</label>
+							</div>
+						</div>
+						<div class="row-sm form-section tall center">
+							<div class="input-full">
+								<textarea
+									name="subject"
+									id="subject"
+									rows="4"
+									class="text-box"
+								></textarea>
+							</div>
+						</div>
+						<div class="row-sm center short">
+							<button type="submit" id="send" class="submit-button">
+								Send Message
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="row-sm right">
+					<a href="index.html">Back to the Game</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- Email Script-->
+	<script
+		type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+	></script>
+	<script type="text/javascript">
+		(function () {
+			emailjs.init('user_8bAv4RpyCxxhdDuZ02hoe');
+		})();
+	</script>
+	<!-- my script tags -->
+	<script src="assets/js/contact.js" type="text/javascript"></script>
 </html>
