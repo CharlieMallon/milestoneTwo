@@ -442,4 +442,24 @@ body.about-page{
         margin: 0;
     }
 
+    .fa-door-open {
+        display: none;
+    }
+
+    .end {
+        background-color: var(--end);
+    }
+
+}
+
+@media (orientation: landscape) and (max-height: 320px) {
+
+    .swal2-container{
+        padding: 0px;
+    }
+
+    .swal2-popup{
+        padding: .5em;
+    }
+
 }
