@@ -54,7 +54,7 @@ h3 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .col-sm {
@@ -95,6 +95,7 @@ h3 {
 
 .half{
     width: 50%;
+    max-width: 700px;
 }
 
 /* maze game page */
@@ -170,7 +171,15 @@ h3 {
     visibility: hidden;
 }
 
+.score{
+    width: 100%;
+}
+
 /* Contact page */
+
+body.about-page{
+    justify-content: flex-start;
+}
 
 .rnd-img {
     height: 160px;
@@ -210,6 +219,10 @@ h3 {
 
 .form-title {
     padding-top: 20px;
+}
+
+.form-section{
+    width: 100%;
 }
 
 .tall {
@@ -391,6 +404,42 @@ h3 {
     .rnd-img {
         height: 300px;
         width: 300px;
+    }
+
+}
+
+/* ----------Landscape---------- */
+
+@media (orientation: landscape) and (max-height: 900px) {
+
+    .col-sm {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .half-width,
+    .score {
+        width: 50%;
+    }
+    
+    .title{
+        margin: 0px;
+    }
+
+    .gameAndControls{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #gameBoard {
+        width: 80vmin;
+        height: 80vmin;
+        margin: 0;
     }
 
 }
