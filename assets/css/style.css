@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
 h1 {
@@ -75,6 +76,9 @@ h3 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.left-indent {
     padding-left: 5%;
 }
 
@@ -208,6 +212,14 @@ h3 {
     padding-top: 20px;
 }
 
+.tall {
+    height: 80px;
+}
+
+.short {
+    height: 40px;
+}
+
 .left {
     justify-content: flex-start;
 }
@@ -309,10 +321,6 @@ h3 {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-
-    body {
-        width: 100vw;
-    }
 
     .mobileOnly{
         display: none;
