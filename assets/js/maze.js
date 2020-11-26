@@ -399,6 +399,7 @@ function moveHero(moveDirection) {
 	legal();
 	draw(gameBoard);
 	checkWin();
+	checkLose();
 }
 
 // Takes the output of the function whichDirection & works out where the user
@@ -454,6 +455,13 @@ function checkWin() {
 	}
 }
 
+// Check if the score is 0 and so the user lost
+function checkLose(){
+	if (score === 0){
+		lose();
+	}
+}
+
 //---------- Win Functions ----------//
 
 // When you get to the end square the win Modal pops up.
@@ -497,10 +505,38 @@ function reStart() {
 	draw();
 }
 
+
+//---------- Lose Functions ----------//
+
+// When you get to 0 points the lose Modal pops up.
+// Gives option to re-start
+function lose() {
+	Swal.fire({
+		title: 'You Lose!',
+		imageUrl: "https://media.giphy.com/media/YARUMKaGd8cRG/giphy.gif",
+		imageHeight: '100',
+		text: 'Your ghost will wonder lost in this maze forever.',
+		showDenyButton: false,
+		showCancelButton: false,
+		confirmButtonColor: '#3085d6',
+		confirmButtonText: `Play Again!`,
+		allowOutsideClick: false,
+		background: '#fff',
+		backdrop: `
+            rgba(0,0,123,0.5)
+        `,
+	}).then((result) => {
+		/* Read more about isConfirmed, isDenied below */
+		if (result.isConfirmed) {
+			reStart();
+		}
+	});
+}
+
 //---------- Score Functions ----------//
 
 let score = 1000;
-const scoreFactor = 5;
+const scoreFactor = 50;
 
 // minuses the scoreFactor every move that is made
 function changeScore() {
@@ -518,9 +554,9 @@ let level = 0;
 
 // sets the start, end and wall map for each level. Each time
 // this function is called it will add one to the level and up
-// the score by 1000.  Then draws the board.
+// the score by 500.  Then draws the board.
 function nextLevel() {
-	score = score + 1000;
+	score = score + 500;
 	level = level + 1;
 	switch (level) {
 		case 1:
