@@ -7,9 +7,11 @@ This is a simple maze game with some fun features and should hopefully show of m
 -   ### User stories
 
     #### User Story:
+
     As a user, I want to play an interactive game.
 
     #### Acceptance Criteria
+
     -   The hero character should be moveable.
     -   There should be rules for the environment.
     -   There should be a clear end point.
@@ -18,6 +20,7 @@ This is a simple maze game with some fun features and should hopefully show of m
     -   It should be clear that the user has won/lost the game.
 
     #### Description:
+
     The character will be able to move using buttons or keys. There will be at least two maze maps,
     with a clear exit on each map. The character will not be able to walk off the edge of the map
     or through the Maze walls. The instruction will pop up on game start and will be accessible using
@@ -25,55 +28,72 @@ This is a simple maze game with some fun features and should hopefully show of m
     to win the game. Modal will be used to tell the user that they have Won or Lost the game.
 
     #### User Story:
+
     As a returning user, I want to get better at the game.
 
     #### Acceptance Criteria
+
     -   Have a score that takes into account the number of keystrokes used to get to the exit.
 
     #### Description:
-    For each keystroke 5 points will be taken of the starting score of 1,000.  If you get to a score of 0
+
+    For each keystroke 5 points will be taken of the starting score of 1,000. If you get to a score of 0
     you will lose. For each level you clear 500 points will be added to the score.
 
     #### User Story:
-    As a user, I want to view the website and content clearly on any device
 
-    #### User Story:
     As a user, I want to know more about the developer and see anything else they have been working on.
+
     #### Acceptance Criteria
+
     -   A short description of the developer of this game.
     -   A way to see any other projects.
     -   A way to get in touch.
+
     #### Description:
-    This will be achieved with an about the developer page.  Which will have a short description of the
-    developer and why this site was created.  It will also have a link to the developers gitHub page where
-    more up-to-date information will be displayed.  It is not intended that this will be updated regularly
-    so the information will be generic.  There will be a contact form that uses the JS email service to get
+
+    This will be achieved with an about the developer page. Which will have a short description of the
+    developer and why this site was created. It will also have a link to the developers gitHub page where
+    more up-to-date information will be displayed. It is not intended that this will be updated regularly
+    so the information will be generic. There will be a contact form that uses the JS email service to get
     in touch with the developer.
+
     #### User Story:
+
     As a user, I want give feedback on this game.
 
     #### Acceptance Criteria
+
     -   A way to send an email to the developer.
     -   To be alerted when the email has sent or failed to send.
     -   Validation on the boxes to ensure that all relevant boxes are filed in.
     -   Validation on the email address to say an email has been inputted.
+
     #### Description:
-    This will be achieved using a contact form and the JS email service.  With a pop up modal to tell the user that the message has been sent.
-    The required attribute will be added to each of the required boxes.  The email attribute will be added to the email box.
-    This will ensure the user is alerted if any of the information is incorrect.
+
+    This will be achieved using a contact form and the JS email service. With a pop up modal to tell the
+    user that the message has been sent or failed to send. The required attribute will be added to each of
+    the required boxes. The email attribute will be added to the email box. This will ensure the user is
+    alerted if any of the information is incorrect or incomplete.
+
+    #### User Story:
+
+    As a user, I want to view the website and content clearly on any device
 
     #### Acceptance Criteria
+
     -   Website layout is well displayed and readable across all sized devices and different orientations.
 
     #### Description:
-    Flexbox will be used to lay the content of the website out. Mobile first design will be used when 
-    coding the project and testing will be required to ensure the layout is clear on all devices. No 
-    elements should overlap their containers and all items should be responsive. Where practical the 
-    game board should be displayed on one screen.
+
+    Flexbox will be used to lay the content of the website. Mobile first design will be used when
+    coding the project and testing will be required to ensure the layout is clear on all devices. No
+    elements should overlap their containers and all items should be responsive. Where practical the
+    game board should be displayed on one screen (ie no scrolling).
 
 -   ### Design
     -   #### Colour Scheme
-        -   a few colour schemes for people to chose from. remember that it should work on dark and light!
+        -   Colours are 
     -   #### Typography
         -   cartoony - comic sans?
     -   #### Imagery
@@ -109,11 +129,11 @@ I have split the features into Beta, Issue 1 & Issue 2. The project is currently
     -   Change Character
     -   Change Colour
     -   Dark/Light Toggle
-    -   Randomise Game Board (many levels)
     -   Use gestures for mobile Screens
 
 -   ### Issue 2
     -   Leader Board
+    -   Randomise Game Board (many levels)
 
 ## Technologies Used
 
