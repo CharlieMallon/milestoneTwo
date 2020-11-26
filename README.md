@@ -185,6 +185,7 @@ I have split the features into Beta, Issue 1 & Issue 2. The project is currently
 ### Media
 
 -   [justy](https://giphy.com/justy) on [giphy.com](https://giphy.com) for the confetti background
+-   [wifflegif](https://wifflegif.com/) on [giphy.com](https://giphy.com) for the ghost
 -   [imgflip](https://imgflip.com/gif-maker?from=images) was used to make the keys.gif
 
 ### Acknowledgements
