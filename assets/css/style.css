@@ -400,17 +400,17 @@ body.about-page{
 
 @keyframes ghost {
     0%  {
-        left: 0%;
+        left: 5%;
     }
     49.999%{
-        left: 100%;
+        left: 95%;
         transform: scaleX(1);
     }
     50% {
         transform: scaleX(-1);
     }
     99.99%{
-        left: 0%;
+        left: 5%;
     }
     100%{
         transform: scaleX(-1);

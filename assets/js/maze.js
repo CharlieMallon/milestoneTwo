@@ -536,7 +536,7 @@ function lose() {
 //---------- Score Functions ----------//
 
 let score = 1000;
-const scoreFactor = 50;
+const scoreFactor = 5;
 
 // minuses the scoreFactor every move that is made
 function changeScore() {
