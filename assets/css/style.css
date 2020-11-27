@@ -78,6 +78,12 @@ h3 {
     align-items: center;
 }
 
+.space{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .left-indent {
     padding-left: 5%;
 }
@@ -91,11 +97,6 @@ h3 {
 .text-center {
     text-align: center;
     padding-bottom: 15px;
-}
-
-.half{
-    width: 50%;
-    max-width: 700px;
 }
 
 .full{
@@ -172,7 +173,12 @@ h3 {
 }
 
 .show-desk {
-    visibility: hidden;
+    display: none;
+}
+
+.half{
+    width: 50%;
+    padding-bottom: 15px;
 }
 
 .score{
@@ -283,6 +289,36 @@ body.about-page{
     display: none;
 }
 
+/* ----------Lose Ghost ---------- */
+
+@keyframes ghost {
+    0%  {
+        left: 5%;
+    }
+    49.999%{
+        left: 95%;
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+    99.99%{
+        left: 5%;
+    }
+    100%{
+        transform: scaleX(-1);
+    }
+}
+
+.swal2-image{
+    position: relative;
+    margin-left: 0px;
+    margin-right: 100%;
+    animation-name: ghost;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
 
@@ -361,7 +397,20 @@ body.about-page{
     }
 
     .show-desk {
-        visibility: visible;
+        display: inline;
+    }
+
+    .center-desk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .text-center-desk {
+        text-align: center;
+        padding-bottom: 15px;
     }
 
     .about{
@@ -374,6 +423,12 @@ body.about-page{
 
     .desktop-half{
         max-width: 600px;
+    }
+
+    .third{
+        width: 33%;
+        max-width: 500px;
+        padding-bottom: 15px;
     }
 
     .developer{
@@ -396,34 +451,6 @@ body.about-page{
         width: 200px;
     }
 
-}
-
-@keyframes ghost {
-    0%  {
-        left: 5%;
-    }
-    49.999%{
-        left: 95%;
-        transform: scaleX(1);
-    }
-    50% {
-        transform: scaleX(-1);
-    }
-    99.99%{
-        left: 5%;
-    }
-    100%{
-        transform: scaleX(-1);
-    }
-}
-
-.swal2-image{
-    position: relative;
-    margin-left: 0px;
-    margin-right: 100%;
-    animation-name: ghost;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

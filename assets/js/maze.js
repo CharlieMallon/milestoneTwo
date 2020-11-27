@@ -331,6 +331,50 @@ if (window.screen.width >= 992) {
 	});
 }
 
+//---------- How to play link ----------//
+
+function howToPlay() {
+	if (window.screen.width >= 992) {
+		Swal.fire({
+			title: 'How to play',
+			html:
+				'Navigate through the maze to the exit  ' +
+				'<i class="fas fa-door-open"></i>' +
+				'<br></br>' +
+				'<img src="assets/img/keys.gif" alt="keys gif"></img>' +
+				'<br></br>' +
+				'Using either the arrow keys, number pad or WASD keys.',
+			confirmButtonText: `Lets Play`,
+			confirmButtonColor: '#3085d6',
+			allowOutsideClick: false,
+			width: 600,
+			padding: '3em',
+			background: '#fff',
+			backdrop: `
+				rgba(0,0,123,0.5)
+			`,
+		});
+	} else {
+		Swal.fire({
+			title: 'How to play',
+			html:
+				'Navigate through the maze to the exit  ' +
+				'<i class="fas fa-door-open"></i>' +
+				'<br></br>' +
+				'<img src="assets/img/arrows.png" alt="arrows"></img>' +
+				'<br></br>' +
+				'Using the arrow keys buttons.',
+			confirmButtonText: `Lets Play`,
+			confirmButtonColor: '#3085d6',
+			allowOutsideClick: false,
+			background: '#fff',
+			backdrop: `
+					rgba(0,0,123,0.5)
+				`,
+		});
+	}
+}
+
 //---------- Draw Functions ----------//
 
 // First Clears the game board then draws the hero, walls, end square and finally display the score
@@ -456,8 +500,8 @@ function checkWin() {
 }
 
 // Check if the score is 0 and so the user lost
-function checkLose(){
-	if (score === 0){
+function checkLose() {
+	if (score === 0) {
 		lose();
 	}
 }
@@ -505,7 +549,6 @@ function reStart() {
 	draw();
 }
 
-
 //---------- Lose Functions ----------//
 
 // When you get to 0 points the lose Modal pops up.
@@ -513,9 +556,9 @@ function reStart() {
 function lose() {
 	Swal.fire({
 		title: 'You Lose!',
-		imageUrl: "https://media.giphy.com/media/YARUMKaGd8cRG/giphy.gif",
+		imageUrl: 'https://media.giphy.com/media/YARUMKaGd8cRG/giphy.gif',
 		imageHeight: '100',
-		text: 'Your ghost will wonder lost in this maze forever.',
+		text: 'Your ghost will wander lost in this maze forever.',
 		showDenyButton: false,
 		showCancelButton: false,
 		confirmButtonColor: '#3085d6',
@@ -592,14 +635,16 @@ function nextLevel() {
 	draw();
 }
 
+//---------- The buttons ----------//
+
 // Show the buttons
 function showButtons() {
 	document.getElementById('show').innerHTML =
 		'<a href="javascript:hideButtons()" id="show">Hide Buttons</a>';
 	document.getElementById('buttons').classList.remove('mobileOnly');
-	if (document.getElementById('gameBoard').offsetHeight > window.innerHeight*0.7){
-		document.getElementById('gameBoard').style.height = "70vmin";
-		document.getElementById('gameBoard').style.width = "70vmin";
+	if (document.getElementById('gameBoard').offsetHeight > window.innerHeight * 0.7) {
+		document.getElementById('gameBoard').style.height = '70vmin';
+		document.getElementById('gameBoard').style.width = '70vmin';
 	}
 }
 
@@ -608,8 +653,8 @@ function hideButtons() {
 	document.getElementById('show').innerHTML =
 		'<a href="javascript:showButtons()" id="show">Show Buttons</a>';
 	document.getElementById('buttons').classList.add('mobileOnly');
-	if (document.getElementById('gameBoard').style.height = "70vmin"){
-		document.getElementById('gameBoard').style.height = "90vmin";
-		document.getElementById('gameBoard').style.width = "90vmin";
+	if ((document.getElementById('gameBoard').style.height = '70vmin')) {
+		document.getElementById('gameBoard').style.height = '90vmin';
+		document.getElementById('gameBoard').style.width = '90vmin';
 	}
 }
