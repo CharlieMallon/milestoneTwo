@@ -1,4 +1,6 @@
-<h1 align="center">Maze Game</h1>
+# Maze Game
+
+[View the live website here](https://charliemallon.github.io/milestoneTwo/)
 
 This is a simple maze game with some fun features and should hopefully show of my coding Knowledge so far.
 
@@ -92,12 +94,29 @@ This is a simple maze game with some fun features and should hopefully show of m
     game board should be displayed on one screen (ie no scrolling).
 
 -   ### Design
+
+    The design of this site has purposely been kept very simple. This is to allow for future customisation of the site.  
+    This means the about the developer page in particular looks fairly sparse however as the point of the page is either
+    to direct people away from the site (gitHub) or allow them to get in touch this was not seen as a particular concern.
+
     -   #### Colour Scheme
-        -   Colours are 
+
+        The colours I have are purposely muted, I am going for a retro old school type look. Issue two of the game will
+        have an option to choose your own colours and there will be some brighter colour schemes. The is to provide
+        radically different colour schemes.
+
     -   #### Typography
-        -   cartoony - comic sans?
-    -   #### Imagery
-        -   simple and clean
+
+        In keeping with the retro, cartoony look Comic Sans have been used. This is as the font was over used and
+        generally a ['joke' font](https://www.freepik.com/blog/comic-sans-joke-graphic-design-community/). I have left
+        it in as there is very little writing on the site.
+
+    -   #### Maze Design
+        Each of the [mazes](assets/supportingDocs/maze.png) were designed in excel. As well as the [Fav Icon](assets/supportingDocs/favIconExcel.png). 
+        Using inspiration from doing a simple maze image search on [google](https://www.google.com/). I Layed out a 21 by 21 grid (as that is the size 
+        i used for the css grid) and filled in squares until it looked right. I then added borders to each of the 'blocks' that i wanted to code. Worked 
+        out the x & y co-ordinates for the starting block and then the heigh (h) or width (w) of the block from the starting square. These numbers 
+        where then used to tell the JS where the maze needed to be drawn.
 
 *   ### Wireframes
 
@@ -111,7 +130,7 @@ This is a simple maze game with some fun features and should hopefully show of m
 
 ## Features
 
-I have split the features into Beta, Issue 1 & Issue 2. The project is currently at the Beta stage
+I have split the features into Beta, Issue 1, Issue 2 & Issue 3. The project is currently at Issue 1.
 
 -   ### Beta
 
@@ -125,7 +144,11 @@ I have split the features into Beta, Issue 1 & Issue 2. The project is currently
 -   ### Issue 1
 
     -   Model for Game over
+    -   Model for Winning
     -   Model for How to play - with cool arrow graphics
+
+-   ### Issue 2
+
     -   Change Character
     -   Change Colour
     -   Dark/Light Toggle
@@ -149,34 +172,96 @@ I have split the features into Beta, Issue 1 & Issue 2. The project is currently
 2. [Google Fonts](https://fonts.google.com/)
 3. [Font Awesome](https://fontawesome.com/)
 
+### Resources
+
+> - [Code Institute Course Content](https://courses.codeinstitute.net/)
+> - Code Institute **SLACK Community**
+> - [Stack Overflow](https://stackoverflow.com/)
+> - [Youtube](https://www.youtube.com/)
+> - [CSS-Tricks](https://css-tricks.com/)
+> - [Balsamiq](https://balsamiq.com/wireframes/)
+
+
 ## Testing
+
+Testing is detailed in a separate file [here](testing.md).
 
 ### Bugs
 
+This section will detail the bugs that I came across coding and the main one that I found during testing.
+
 -   #### During coding
 
-        -   The Hero was not able to walk two squares under the wall.  I put in loads of console.logs to see if i could find out why, as far as my code was concerned the wall extended two blocks further than my wall.  This issue due to the way i was defining my walls (start point and end point)
-            -   fix - defined the start co-ordinate and the span of the height and width.
-        -   The Hero can walk though the bottom left of a square.
-            -   Only the top and left hand side of the square are being checked if they are a legal move (see table)
-            -   Fix - nest the for loops so each square is being checked.
-
-    | X,Y | checked | checked |
-    |checked | not checked | not checked |
-    |checked | not checked | not checked |
+| Bug | Things Tried | final Fix|
+| ---| --- |--- |
+| The Hero was not able to walk two squares under the wall.                       | I put in loads of console.logs to see if i could find out why, as far as my code was concerned the wall extended two blocks further than my wall. This issue due to the way i was defining my walls (start point and end point) | Defined the start co-ordinate and the span of the height and width.                                                                                                                   |
+| The Hero can walk though the bottom left of a square.                           | Only the top and left hand side of the square are being checked if they are a legal move (see table)                                                                                                                            | nest the for loops so each square is being checked.                                                                                                                                   |
+| The hero continues to walk when and arrow key is followed by any other key.     |                                                                                                                                                                                                                                 | default case to the switch.                                                                                                                                                           |
+| The hero moves two steps not one when it goes through animation frames.         | this issue is to do with the refresh rate of the animation loop                                                                                                                                                                 | Removed the animation loop so it is now a user driven response.                                                                                                                       |
+| On the iPhone a double tap of the buttons zooms in on that section of the page. | considered using JS - seemed over complicated.                                                                                                                                                                                  | Found an article about [touch-action](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action#manipulation) that introduced me to touch actions and how to stop them happening. |
 
 -   #### Durning testing
-    -   The hero continues to walk when and arrow key is followed by any other key. solution - default case to the switch.
-    -   The hero moves two steps not one when it goes through animation frames. - this issue is to do with the refresh rate of the animation loop - removed the animation loop so it is now a user driven response.
-    -   On the iPhone a double tap of the buttons zooms in on that section of the page. - considered using JS - seemed over complicated. Found an article about [touch-action](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action#manipulation) that introduced me to touch actions and how to stop them happening.
+
+| Test Ref  | Test Description  | Bug Description | final fix | comment |
+| --------- | ----------------- | ----------------| --------- | ------- |
+| MS2 - 001 | Does the character move up, down, left and right using the arrow keys? | screen moves when up/down keys are pressed                 | Re-layed out the page so that it fits on one screen.                                                                                                         | Regression testing required re-do all layout tests MS2-049 through to MS2-056                                    |
+| MS2 - 019 | Is there a 'how to play' link?                                         | on mobile - cannot scroll to bottom of page                | Body had touch events set to none. This was to remove the double tap zoom. Changed it to only allow scrolling. Also set the game board to touch-events none. | Regression testing re-do MS2-004, on tablet or phone - check for double tab.                                     |
+| MS2 - 022 | Does the score reduce by 5 for every key I press?                      | score doesn't change the first time you move the character | Not fixing                                                                                                                                                   | This is a game quirk that I have decided to keep as it is a gesture of good will to allow the 1st move for free. |
+| MS2 - 046 | Is an error given when the box is left blank?                          | Email sent with blank message                              | Added required attribute to the message box.                                                                                                                 | Regression testing re-do MS2-045 & MS2-046.                                                                      |
 
 ## Deployment
+
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/CharlieMallon/milestoneTwo)
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+    - Alternatively Click [Here](https://raw.githubusercontent.com/) for a GIF demonstrating the process starting from Step 2.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [link](https://github.com) in the "GitHub Pages" section.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository you make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/CharlieMallon/milestoneTwo)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/CharlieMallon/milestoneTwo)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Credits
 
 ### Code
 
--
+The inspiration for this project came from this (Snake Game)[https://www.youtube.com/watch?v=QTcIXok9wNY&feature=emb_logo] by (Web Dev Simplified)[https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw].
 
 ### Content
 
@@ -190,5 +275,5 @@ I have split the features into Beta, Issue 1 & Issue 2. The project is currently
 
 ### Acknowledgements
 
--   mentor
--   Bim
+-   My Mentor Brian Macharia for some good guidance
+-   Mr_Bim_alumni for general encouragement and the occasional kick up the backside
