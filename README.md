@@ -305,5 +305,6 @@ The inspiration for this project came from this (Snake Game)[https://www.youtube
 
 ### Acknowledgements
 
--   My Mentor Brian Macharia for some good guidance
--   Mr_Bim_alumni for general encouragement and the occasional kick up the backside
+-   My Mentor Brian Macharia for some good guidance.
+-   Mr_Bim_alumni for general encouragement and the occasional kick up the backside.
+-   Daisy Mc Girr for her help and encouragement with my testing documentation.
