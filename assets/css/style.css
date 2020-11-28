@@ -54,7 +54,6 @@ h3 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
 }
 
 .col-sm {
@@ -138,13 +137,19 @@ h3 {
 /* Game & Game Board */
 
 #gameBoard {
+    touch-action: none;
     height: 85vmin;
     width: 85vmin;
     display: grid;
     grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
     grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
     background-color: var(--gameBoard);
-    margin: 5px;
+    margin: 15px;
+}
+
+.gameBody {
+    display: flex;
+    justify-content: center;
 }
 
 .game{
@@ -391,9 +396,7 @@ body.about-page{
     }
 
     #gameBoard {
-        margin: 0px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 20px;
     }
 
     .show-desk {
@@ -498,7 +501,6 @@ body.about-page{
     #gameBoard {
         width: 75vmin;
         height: 75vmin;
-        margin: 0;
     }
 
     .fa-door-open {
