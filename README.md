@@ -2,6 +2,9 @@
 
 [View the live website here](https://charliemallon.github.io/milestoneTwo/)
 
+
+![image](assets/supportingDocs/amIresponsive.png)
+
 This is a simple maze game with some fun features and should hopefully show of my coding Knowledge so far.
 
 ## User Experience (UX)
@@ -180,7 +183,7 @@ I have split the features into Beta, Issue 1, Issue 2 & Issue 3. The project is 
     -   Dark/Light Toggle
     -   Use gestures for mobile Screens
 
--   ### Issue 2
+-   ### Issue 3
     -   Leader Board
     -   Randomise Game Board (many levels)
 
@@ -200,13 +203,13 @@ I have split the features into Beta, Issue 1, Issue 2 & Issue 3. The project is 
 
 ### Resources
 
+- [Am I Responsive Design](http://ami.responsivedesign.is/#)
 - [Code Institute Course Content](https://courses.codeinstitute.net/)
 - Code Institute **SLACK Community**
 - [Stack Overflow](https://stackoverflow.com/)
 - [Youtube](https://www.youtube.com/)
 - [CSS-Tricks](https://css-tricks.com/)
 - [Balsamiq](https://balsamiq.com/wireframes/)
-
 
 ## Testing
 
@@ -216,9 +219,9 @@ Testing is detailed in a separate file [here](testing.md).
 
 This section will detail the bugs that I came across coding and the main one that I found during testing.
 
--   #### During coding
+**During coding**
 
-| Bug | Things Tried | final Fix|
+| Bug | Things Tried | Final Fix|
 | ---| --- |--- |
 | The Hero was not able to walk two squares under the wall.                       | I put in loads of console.logs to see if i could find out why, as far as my code was concerned the wall extended two blocks further than my wall. This issue due to the way i was defining my walls (start point and end point) | Defined the start co-ordinate and the span of the height and width.                                                                                                                   |
 | The Hero can walk though the bottom left of a square.                           | Only the top and left hand side of the square are being checked if they are a legal move (see table)                                                                                                                            | nest the for loops so each square is being checked.                                                                                                                                   |
@@ -226,9 +229,10 @@ This section will detail the bugs that I came across coding and the main one tha
 | The hero moves two steps not one when it goes through animation frames.         | this issue is to do with the refresh rate of the animation loop                                                                                                                                                                 | Removed the animation loop so it is now a user driven response.                                                                                                                       |
 | On the iPhone a double tap of the buttons zooms in on that section of the page. | considered using JS - seemed over complicated.                                                                                                                                                                                  | Found an article about [touch-action](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action#manipulation) that introduced me to touch actions and how to stop them happening. |
 
--   #### Durning testing
 
-| Test Ref  | Test Description  | Bug Description | final fix | comment |
+**During testing**
+
+| Test Ref  | Test Description  | Bug Description | Final fix | Comment |
 | --------- | ----------------- | ----------------| --------- | ------- |
 | MS2-001 | Does the character move up, down, left and right using the arrow keys? | screen moves when up/down keys are pressed                 | Re-layed out the page so that it fits on one screen.                                                                                                         | Regression testing required re-do all layout tests MS2-049 through to MS2-056                                    |
 | MS2-019 | Is there a 'how to play' link?                                         | on mobile - cannot scroll to bottom of page                | Body had touch events set to none. This was to remove the double tap zoom. Changed it to only allow scrolling. Also set the game board to touch-events none. | Regression testing re-do MS2-004, on tablet or phone - check for double tab.                                     |
