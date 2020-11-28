@@ -8,7 +8,7 @@ This is a simple maze game with some fun features and should hopefully show of m
 
 -   ### User stories
 
-    #### User Story:
+    #### User Story 1
 
     As a user, I want to play an interactive game.
 
@@ -16,20 +16,46 @@ This is a simple maze game with some fun features and should hopefully show of m
 
     -   The hero character should be moveable.
     -   There should be rules for the environment.
-    -   There should be a clear end point.
-    -   The keys should be clearly indicated.
-    -   The instruction to play the game should be clear and accessible at all times.
-    -   It should be clear that the user has won/lost the game.
+    -   There should be multiple game maps.
 
     #### Description:
 
-    The character will be able to move using buttons or keys. There will be at least two maze maps,
-    with a clear exit on each map. The character will not be able to walk off the edge of the map
-    or through the Maze walls. The instruction will pop up on game start and will be accessible using
-    a 'how to play' link on the game page. Instructions will indicate the keys needed to play and how
-    to win the game. Modal will be used to tell the user that they have Won or Lost the game.
+    The character will be able to move using buttons or keys. The character will not be able to walk 
+    off the edge of the map or through the Maze walls. There will be at least two maze maps, with a 
+    clear exit on each map.
 
-    #### User Story:
+    #### User Story 2
+
+    As a user, I want to know if I have won or lost the game.
+
+    #### Acceptance Criteria
+
+    -   There should be a clear end point.
+    -   It should be clear that the user has won/lost the game.
+    -   If the user loses / finishes the game there should be an option to re-start.
+
+    #### Description:
+
+    There will be a clear exit on each map.Modal will be used to tell the user that they have Won or Lost the game.
+    The loose modal will have the option to play again.  When you get to the end a modal will pop up with the option to play again.
+
+    #### User Story 3
+
+    As a user, I want to play know how to play the game.
+
+    #### Acceptance Criteria
+
+    -   The instruction to play the game should be clear and visible on first playing.
+    -   The keys should be clearly indicated.
+    -   Instructions should tell the user how to win the game
+    -   The instruction to play the game should be  accessible whist playing.
+
+    #### Description:
+
+     The instruction will pop up on game start. Instructions will indicate the keys needed to play.
+     The game is won by getting to the exit. The instruction will be accessible using  a 'how to play' link on the game page.
+
+    #### User Story 4
 
     As a returning user, I want to get better at the game.
 
@@ -39,10 +65,10 @@ This is a simple maze game with some fun features and should hopefully show of m
 
     #### Description:
 
-    For each keystroke 5 points will be taken of the starting score of 1,000. If you get to a score of 0
+    The score will be Visible. For each keystroke 5 points will be taken of the starting score of 1,000. If you get to a score of 0
     you will lose. For each level you clear 500 points will be added to the score.
 
-    #### User Story:
+    #### User Story 5
 
     As a user, I want to know more about the developer and see anything else they have been working on.
 
@@ -60,7 +86,7 @@ This is a simple maze game with some fun features and should hopefully show of m
     so the information will be generic. There will be a contact form that uses the JS email service to get
     in touch with the developer.
 
-    #### User Story:
+    #### User Story 6
 
     As a user, I want give feedback on this game.
 
@@ -78,7 +104,7 @@ This is a simple maze game with some fun features and should hopefully show of m
     the required boxes. The email attribute will be added to the email box. This will ensure the user is
     alerted if any of the information is incorrect or incomplete.
 
-    #### User Story:
+    #### User Story 7
 
     As a user, I want to view the website and content clearly on any device
 
@@ -174,12 +200,12 @@ I have split the features into Beta, Issue 1, Issue 2 & Issue 3. The project is 
 
 ### Resources
 
-> - [Code Institute Course Content](https://courses.codeinstitute.net/)
-> - Code Institute **SLACK Community**
-> - [Stack Overflow](https://stackoverflow.com/)
-> - [Youtube](https://www.youtube.com/)
-> - [CSS-Tricks](https://css-tricks.com/)
-> - [Balsamiq](https://balsamiq.com/wireframes/)
+- [Code Institute Course Content](https://courses.codeinstitute.net/)
+- Code Institute **SLACK Community**
+- [Stack Overflow](https://stackoverflow.com/)
+- [Youtube](https://www.youtube.com/)
+- [CSS-Tricks](https://css-tricks.com/)
+- [Balsamiq](https://balsamiq.com/wireframes/)
 
 
 ## Testing
@@ -204,10 +230,10 @@ This section will detail the bugs that I came across coding and the main one tha
 
 | Test Ref  | Test Description  | Bug Description | final fix | comment |
 | --------- | ----------------- | ----------------| --------- | ------- |
-| MS2 - 001 | Does the character move up, down, left and right using the arrow keys? | screen moves when up/down keys are pressed                 | Re-layed out the page so that it fits on one screen.                                                                                                         | Regression testing required re-do all layout tests MS2-049 through to MS2-056                                    |
-| MS2 - 019 | Is there a 'how to play' link?                                         | on mobile - cannot scroll to bottom of page                | Body had touch events set to none. This was to remove the double tap zoom. Changed it to only allow scrolling. Also set the game board to touch-events none. | Regression testing re-do MS2-004, on tablet or phone - check for double tab.                                     |
-| MS2 - 022 | Does the score reduce by 5 for every key I press?                      | score doesn't change the first time you move the character | Not fixing                                                                                                                                                   | This is a game quirk that I have decided to keep as it is a gesture of good will to allow the 1st move for free. |
-| MS2 - 046 | Is an error given when the box is left blank?                          | Email sent with blank message                              | Added required attribute to the message box.                                                                                                                 | Regression testing re-do MS2-045 & MS2-046.                                                                      |
+| MS2-001 | Does the character move up, down, left and right using the arrow keys? | screen moves when up/down keys are pressed                 | Re-layed out the page so that it fits on one screen.                                                                                                         | Regression testing required re-do all layout tests MS2-049 through to MS2-056                                    |
+| MS2-019 | Is there a 'how to play' link?                                         | on mobile - cannot scroll to bottom of page                | Body had touch events set to none. This was to remove the double tap zoom. Changed it to only allow scrolling. Also set the game board to touch-events none. | Regression testing re-do MS2-004, on tablet or phone - check for double tab.                                     |
+| MS2-022 | Does the score reduce by 5 for every key I press?                      | score doesn't change the first time you move the character | Not fixing                                                                                                                                                   | This is a game quirk that I have decided to keep as it is a gesture of good will to allow the 1st move for free. |
+| MS2-046 | Is an error given when the box is left blank?                          | Email sent with blank message                              | Added required attribute to the message box.                                                                                                                 | Regression testing re-do MS2-045 & MS2-046.                                                                      |
 
 ## Deployment
 
