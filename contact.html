@@ -60,7 +60,7 @@
 					<form class="form" onsubmit="return sendMail(this);">
 						<div class="row-sm form-section left">
 							<div class="row-sm input-label">
-								<label for="name">Name</label>
+								<label for="fullName">Name</label>
 							</div>
 						</div>
 						<div class="row-sm form-section short center">
@@ -77,7 +77,7 @@
 						</div>
 						<div class="row-sm form-section left">
 							<div class="row-sm input-label">
-								<label for="email">Email</label>
+								<label for="emailAddress">Email</label>
 							</div>
 						</div>
 						<div class="row-sm form-section short center">
@@ -94,7 +94,7 @@
 						</div>
 						<div class="row-sm form-section left">
 							<div class="row-sm input-label">
-								<label for="email">Message</label>
+								<label for="subject">Message</label>
 							</div>
 						</div>
 						<div class="row-sm form-section tall center">
@@ -120,17 +120,14 @@
 				</div>
 			</div>
 		</div>
+		<!-- Email Script for JS -->
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+		<script>
+			(function () {
+				emailjs.init('user_8bAv4RpyCxxhdDuZ02hoe');
+			})();
+		</script>
+		<!-- my script tags -->
+		<script src="assets/js/contact.js"></script>
 	</body>
-	<!-- Email Script-->
-	<script
-		type="text/javascript"
-		src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
-	></script>
-	<script type="text/javascript">
-		(function () {
-			emailjs.init('user_8bAv4RpyCxxhdDuZ02hoe');
-		})();
-	</script>
-	<!-- my script tags -->
-	<script src="assets/js/contact.js" type="text/javascript"></script>
 </html>
