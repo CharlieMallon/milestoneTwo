@@ -654,7 +654,7 @@ function hideButtons() {
 		'<a href="javascript:showButtons()" id="show">Show Buttons</a>';
 	document.getElementById('buttons').classList.add('mobileOnly');
 	if ((document.getElementById('gameBoard').style.height = '70vmin')) {
-		document.getElementById('gameBoard').style.height = '90vmin';
-		document.getElementById('gameBoard').style.width = '90vmin';
+		document.getElementById('gameBoard').style.height = '85vmin';
+		document.getElementById('gameBoard').style.width = '85vmin';
 	}
 }

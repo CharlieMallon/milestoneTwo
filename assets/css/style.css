@@ -138,8 +138,8 @@ h3 {
 /* Game & Game Board */
 
 #gameBoard {
-    height: 90vmin;
-    width: 90vmin;
+    height: 85vmin;
+    width: 85vmin;
     display: grid;
     grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
     grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
@@ -168,8 +168,8 @@ h3 {
 }
 
 .fa-door-open .end {
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin: 0px;
+    padding: 0px;
 }
 
 .show-desk {
@@ -496,8 +496,8 @@ body.about-page{
     }
 
     #gameBoard {
-        width: 80vmin;
-        height: 80vmin;
+        width: 75vmin;
+        height: 75vmin;
         margin: 0;
     }
 
