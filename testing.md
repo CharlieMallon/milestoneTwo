@@ -1,7 +1,6 @@
 # Maze Game Testing
 
-I put together a test document in excel for manual testing. It details all the steps taken to test the user stories. 
-As i have yet to work out how to get Excel and Github to talk properly.  I have included screen shots of the testing done.
+I have done two types of testing manual and validator tests.  For the manual testing I have put together a test document in excel. It details all the steps taken to test the user stories. As i have yet to work out how to get Excel and Github to talk properly.  I have included screen shots of the testing done.
 
 -   ## User stories
     The following steps were taken to test the user stories
@@ -24,7 +23,7 @@ As i have yet to work out how to get Excel and Github to talk properly.  I have 
     #### Testing & Results
     ![image](assets/supportingDocs/userStory2.png)
     #### Images
-    ![image](assets/supportingDocs/userStory2img.png)
+    ![image](assets/supportingDocs/userStory2Img.png)
 
     #### User Story 3
     | User story | Acceptance Criteria | Description |
@@ -34,7 +33,7 @@ As i have yet to work out how to get Excel and Github to talk properly.  I have 
     #### Testing & Results
     ![image](assets/supportingDocs/userStory3.png)
     #### Images
-    ![image](assets/supportingDocs/userStory3img.png)
+    ![image](assets/supportingDocs/userStory3Img.png)
 
     #### User Story 4
     | User story | Acceptance Criteria | Description |
@@ -44,7 +43,7 @@ As i have yet to work out how to get Excel and Github to talk properly.  I have 
     #### Testing & Results
     ![image](assets/supportingDocs/userStory4.png)
     #### Images
-    ![image](assets/supportingDocs/userStory4img.png)
+    ![image](assets/supportingDocs/userStory4Img.png)
 
     #### User Story 5
     | User story | Acceptance Criteria | Description |
@@ -54,7 +53,7 @@ As i have yet to work out how to get Excel and Github to talk properly.  I have 
     #### Testing & Results
     ![image](assets/supportingDocs/userStory5.png)
     #### Images
-    ![image](assets/supportingDocs/userStory5img.png)
+    ![image](assets/supportingDocs/userStory5Img.png)
 
     #### User Story 6
     | User story | Acceptance Criteria | Description |
@@ -64,7 +63,7 @@ As i have yet to work out how to get Excel and Github to talk properly.  I have 
     #### Testing & Results
     ![image](assets/supportingDocs/userStory6.png)
     #### Images
-    ![image](assets/supportingDocs/userStory6img.png)
+    ![image](assets/supportingDocs/userStory6Img.png)
 
     #### User Story 7
     | User story | Acceptance Criteria | Description |
@@ -88,9 +87,53 @@ As i have yet to work out how to get Excel and Github to talk properly.  I have 
 
 -   ## User stories Regression Testing
 
-    For the areas identifed in the bug summary the following test were done.
+    For the areas identified in the bug summary the following test were done.
 
     #### Testing & Results
     ![image](assets/supportingDocs/regression.png)
     #### Images
     ![image](assets/supportingDocs/after.png)
+
+-   ## Validators
+
+    ### HTML
+    I used the [W3C HTML Validator](https://validator.w3.org/#validate_by_input) to validate my HTML
+
+    #### Output Maze
+    ![image](assets/supportingDocs/htmlResults.png)
+
+    #### Comments Maze
+    1.  Score is inputted by the JS.  This is not really an issue but i have fixed it by putting a starting score of 0.
+    2.  Script is outside the body.  Moved into the Body.
+    3.  No action needs to be taken.
+
+    #### Output About
+    ![image](assets/supportingDocs/htmlResults2.png)
+
+    #### Comments About
+    1.  Script is outside the body.  Moved into the Body.
+    2.  Removed Type attribute as no longer needed (2-4).
+    5.  Updated the for attributes to reflect the id's (5-7).
+
+    ## CSS
+    I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my CSS no errors were found.
+
+    ## JS
+    I used [jshint](https://jshint.com/) to validate my JS
+    
+    #### Output Maze
+    ![image](assets/supportingDocs/MazeJSValidatorStats.png)
+
+    ![image](assets/supportingDocs/MazeJSValidator2.png)
+
+    ![image](assets/supportingDocs/MazeJSValidator1.png)
+
+    #### Comments Maze
+    1.  The warning on line 9 is suggesting that the const should be pulled into the for loop however the for loop needs this to be outside, so this will be disregarded.
+    2.  The other warnings are telling me that there some of the JS syntax is not supported on older browsers. These are advisory and so will be disregarded.
+
+    #### Output About
+    ![image](assets/supportingDocs/contactJSValidator.png)
+
+    #### Comments About
+    1.  The warnings are not something that needs fixing.
