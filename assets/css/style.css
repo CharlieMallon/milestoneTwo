@@ -9,7 +9,7 @@
 }
 
 body {
-    touch-action: none;
+    touch-action: pan-y;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,7 +144,7 @@ h3 {
     grid-template-rows: .25vmin repeat(20, 1fr) .25vmin;
     grid-template-columns: .25vmin repeat(20, 1fr) .25vmin;
     background-color: var(--gameBoard);
-    margin: 5%;
+    margin: 5px;
 }
 
 .game{
@@ -345,7 +345,7 @@ body.about-page{
 
     .half-width,
     .score {
-        margin-top: 30px;
+        margin-top: 10px;
         width: 50%;
     }
 
